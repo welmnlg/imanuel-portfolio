@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Imanuel M.T. Manullang | Penetration Tester</title>
 <meta name="description" content="Imanuel M.T. Manullang is a Penetration Tester and Information Technology student who finds and reports vulnerabilities in web applications." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +30,11 @@
 
 <a class="skip-link" href="#content">Skip to content</a>
 <div class="spotlight" aria-hidden="true"></div>
+
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+  <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
 
 <div class="page">
 
@@ -494,6 +499,24 @@
     </footer>
 
   </main>
+
+  <!-- Mobile / tablet nav drawer: opened by the single hamburger button
+       fixed at the top-right of the screen. Hidden entirely on desktop,
+       where the sidebar nav (in the header above) is used instead. Its
+       links share the same .nav-link class as the sidebar nav, so the
+       scroll-spy script below highlights them the same way. -->
+  <div class="mobile-menu-backdrop"></div>
+  <div class="mobile-menu" id="mobileMenu" inert>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a class="nav-link" href="#about"><span class="nav-indicator"></span><span class="nav-text">About</span></a></li>
+        <li><a class="nav-link" href="#experience"><span class="nav-indicator"></span><span class="nav-text">Experience</span></a></li>
+        <li><a class="nav-link" href="#projects"><span class="nav-indicator"></span><span class="nav-text">Projects</span></a></li>
+        <li><a class="nav-link" href="#certificates"><span class="nav-indicator"></span><span class="nav-text">Certificates &amp; Training</span></a></li>
+        <li><a class="nav-link" href="#achievements"><span class="nav-indicator"></span><span class="nav-text">Achievements</span></a></li>
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <script>
@@ -544,6 +567,54 @@
     root.style.setProperty('--mx', e.clientX + 'px');
     root.style.setProperty('--my', e.clientY + 'px');
   }, { passive: true });
+})();
+
+/* Hamburger drawer: opened from the button inside whichever section's
+   sticky title bar is currently on screen (only one is ever visible
+   at a time, since only one section can be "stuck" at once). */
+(function () {
+  var toggles = Array.prototype.slice.call(document.querySelectorAll('.menu-toggle'));
+  var backdrop = document.querySelector('.mobile-menu-backdrop');
+  var menu = document.querySelector('.mobile-menu');
+  if (!menu) return;
+  var menuLinks = Array.prototype.slice.call(menu.querySelectorAll('a'));
+  var lastToggle = null;
+
+  function setExpanded(open) {
+    toggles.forEach(function (b) { b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+  }
+
+  function openMenu(fromBtn) {
+    lastToggle = fromBtn || toggles[0];
+    document.body.classList.add('menu-open');
+    setExpanded(true);
+    menu.removeAttribute('inert');
+    var first = menu.querySelector('a');
+    if (first) first.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    setExpanded(false);
+    menu.setAttribute('inert', '');
+    document.removeEventListener('keydown', onKeydown);
+    if (lastToggle) lastToggle.focus();
+  }
+
+  function onKeydown(e) {
+    if (e.key === 'Escape') closeMenu();
+  }
+
+  toggles.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (document.body.classList.contains('menu-open')) closeMenu();
+      else openMenu(btn);
+    });
+  });
+
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+  menuLinks.forEach(function (a) { a.addEventListener('click', closeMenu); });
 })();
 </script>
 
