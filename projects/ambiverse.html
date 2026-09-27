@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,54 +11,45 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a href="../index.html#top" class="logo"><span class="mark">IM</span> Imanuel Manullang</a>
-    <nav>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#projects">Projects</a>
-      <a href="../index.html#achievements">Achievements</a>
-      <a href="../index.html#certificates">Certificates</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
+<div class="spotlight" aria-hidden="true"></div>
+
+<main class="detail-page">
+  <a class="back-link" href="../index.html#projects">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"/></svg>
+    Back to projects
+  </a>
+
+  <div class="detail-hero">
+    <p class="project-role">Backend Developer</p>
+    <h1>AmbiVerse</h1>
+    <p class="lede">An all-in-one learning and tryout platform for high school students preparing for Indonesia's UTBK/SNBT state university entrance exams, built to replace scattered, low-quality study materials with one structured environment.</p>
+    <a class="btn" href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener noreferrer">View on GitHub <svg class="arrow" aria-hidden="true" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/></svg></a>
   </div>
-</header>
 
-<main>
-  <div class="container">
-    <div class="detail-hero">
-      <a class="back-link" href="../index.html#projects">← Back to projects</a>
-      <p class="project-role">Backend Developer</p>
-      <h1>AmbiVerse</h1>
-      <p class="lede">An all-in-one learning and tryout platform for high school students preparing for Indonesia's UTBK/SNBT state university entrance exams, built to replace scattered, low-quality study materials with one structured environment.</p>
-      <div style="margin-top: 20px;">
-        <a class="btn btn-secondary" href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener">↗ View on GitHub</a>
-      </div>
-    </div>
+  <div class="detail-meta">
+    <div><span>Role</span><strong>Backend Developer</strong></div>
+    <div><span>Tools</span><strong>PHP, Laravel, MySQL, JavaScript</strong></div>
+    <div><span>Context</span><strong>HIMATIF x ITLG Mini Competition 2022</strong></div>
+    <div><span>Result</span><strong>Best Final Project award</strong></div>
+    <div><span>Repository</span><strong><a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener noreferrer">welmnlg/ambiverse ↗</a></strong></div>
+  </div>
 
-    <div class="detail-meta">
-      <div><span>Role</span><strong>Backend Developer</strong></div>
-      <div><span>Tools</span><strong>PHP, Laravel, MySQL, JavaScript</strong></div>
-      <div><span>Context</span><strong>HIMATIF x ITLG Mini Competition 2022</strong></div>
-      <div><span>Result</span><strong>Best Final Project award</strong></div>
-      <div><span>Repository</span><strong><a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">welmnlg/ambiverse ↗</a></strong></div>
-    </div>
-    
-    <div class="detail-columns">
-      <div class="label">Contribution</div>
-      <ul>
+  <div class="detail-columns">
+    <div class="label">Contribution</div>
+    <ul>
         <li>Developed core backend features using PHP and MySQL.</li>
         <li>Focused on efficient implementation of CRUD operations.</li>
         <li>Added client-side validation for instant feedback and error prevention.</li>
         <li>Ensured the system was stable and user-friendly.</li>
         <li>Contributed to winning the Best Final Project award at HIMATIF x ITLG Mini Competition 2022.</li>
-      </ul>
-    </div>
-    <div class="note-banner">
-      Source code repository is available on GitHub: <a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener" style="text-decoration: underline; font-weight: 600; color: inherit;">welmnlg/ambiverse ↗</a>. The screenshots below are from the working competition submission.
-    </div>
-    
-    <div class="detail-gallery">
+    </ul>
+  </div>
+
+  <div class="note-banner">
+    Source code repository is available on GitHub: <a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener noreferrer">welmnlg/ambiverse ↗</a>. The screenshots below are from the working competition submission.
+  </div>
+
+  <div class="detail-gallery">
       <figure>
         <img src="../images/proj-ambiverse-home.avif" alt="AmbiVerse landing page with a purple space theme and a call to start practicing" />
         <figcaption>Landing page: introduces the UTBK/SNBT tryout platform</figcaption>
@@ -67,17 +58,21 @@
         <img src="../images/proj-ambiverse-admin.avif" alt="AmbiVerse admin dashboard for adding and managing question packages" />
         <figcaption>Admin dashboard: managing tryout question packages</figcaption>
       </figure>
-    </div>
-
   </div>
+
+  <footer class="footer">
+    <p>Questions about this project? Email <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.</p>
+    <p class="copy">&copy; 2026 Imanuel M.T. Manullang</p>
+  </footer>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <span>© 2026 Imanuel M.T. Manullang</span>
-    <span>Built with HTML &amp; CSS</span>
-  </div>
-</footer>
+<script>
+window.addEventListener('mousemove', function (e) {
+  var r = document.documentElement;
+  r.style.setProperty('--mx', e.clientX + 'px');
+  r.style.setProperty('--my', e.clientY + 'px');
+}, { passive: true });
+</script>
 
 </body>
 </html>

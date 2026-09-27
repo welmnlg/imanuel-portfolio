@@ -1,414 +1,551 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Imanuel M.T. Manullang | Portfolio</title>
-<meta name="description" content="Portfolio Imanuel M.T. Manullang · Information Technology student, backend developer & aspiring security consultant." />
+<title>Imanuel M.T. Manullang | Penetration Tester</title>
+<meta name="description" content="Imanuel M.T. Manullang is a Penetration Tester and Information Technology student who finds and reports vulnerabilities in web applications." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a href="#top" class="logo"><span class="mark">IM</span> Portfolio</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/>
+  </symbol>
+  <symbol id="i-github" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+  </symbol>
+</svg>
 
-<main id="top">
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="spotlight" aria-hidden="true"></div>
 
-  <section class="hero" style="border-top:none;">
-    <div class="container">
-      <div class="hero-copy">
-        <p class="eyebrow">Information Technology student · Medan, Indonesia</p>
-        <h1>Building secure, well-crafted applications, one project at a time.</h1>
-        <p class="lede">
-          I'm working toward becoming a security consultant, and I believe that starts
-          with understanding how things are built. So I develop, break, and secure
-          applications from the backend up, currently exploring the Apple ecosystem
-          and Swift as a new frontier.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-secondary" href="mailto:imanuelmtm@gmail.com">Get in touch</a>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Backend Developer</span>
-          <span class="tag">Penetration Tester</span>
-          <span class="tag">Laravel · PHP</span>
-          <span class="tag">Aspiring Security Consultant</span>
-        </div>
-      </div>
+<div class="page">
 
-      <div class="hero-terminal-wrap">
-        <aside class="claude-terminal" aria-label="Terminal summary">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
+  <!-- ============ Sidebar ============ -->
+  <header class="sidebar">
+    <div>
+      <h1><a href="#about">Imanuel M.T. Manullang</a></h1>
+      <p class="role">Penetration Tester</p>
+      <p class="tagline">I find security flaws in web applications before attackers do, and write clear reports that help teams fix them.</p>
+
+      <nav class="nav" aria-label="Sections">
+        <ul>
+          <li><a class="nav-link active" href="#about"><span class="nav-indicator"></span><span class="nav-text">About</span></a></li>
+          <li><a class="nav-link" href="#experience"><span class="nav-indicator"></span><span class="nav-text">Experience</span></a></li>
+          <li><a class="nav-link" href="#projects"><span class="nav-indicator"></span><span class="nav-text">Projects</span></a></li>
+          <li><a class="nav-link" href="#certificates"><span class="nav-indicator"></span><span class="nav-text">Certificates &amp; Training</span></a></li>
+          <li><a class="nav-link" href="#achievements"><span class="nav-indicator"></span><span class="nav-text">Achievements</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <ul class="socials" aria-label="Social">
+      <li>
+        <a href="https://github.com/welmnlg" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)" title="GitHub">
+          <svg aria-hidden="true"><use href="#i-github"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://id.linkedin.com/in/imanuelmnllg" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
+          <svg aria-hidden="true"><use href="#i-linkedin"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:imanuelmtm@gmail.com" aria-label="Email imanuelmtm@gmail.com" title="imanuelmtm@gmail.com">
+          <svg aria-hidden="true"><use href="#i-mail"/></svg>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <!-- ============ Content ============ -->
+  <main class="content" id="content">
+
+    <!-- About -->
+    <section id="about" class="about" aria-label="About">
+      <h2 class="section-title">About</h2>
+      <p>
+        I'm an Information Technology student at Universitas Sumatera Utara (GPA 3.85 / 4.00) focused on
+        application security. I find and validate vulnerabilities through penetration testing projects,
+        Capture the Flag competitions, and security labs, using tools like Burp Suite, Wireshark, Ghidra,
+        GDB, Python, and Linux.
+      </p>
+      <p>
+        I also build what I test. As the backend engineer of the
+        <a class="inline-link" href="http://itlgcloud.my.id/" target="_blank" rel="noopener noreferrer">ITLG Lab Management System</a>,
+        I secured its APIs with JWT authentication and role-based access control, which taught me to look at an
+        application from both sides: as the attacker searching for a way in, and as the developer who wrote it.
+      </p>
+      <p>
+        I'm certified in Google Cybersecurity and Cisco Ethical Hacker. Outside of pentesting I teach, as a
+        laboratory teaching assistant and a coding instructor, and recently gave a talk on reverse engineering
+        and binary analysis at GDG on Campus USU. If you'd like to work together, my inbox is open at
+        <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-label="Experience">
+      <h2 class="section-title">Experience</h2>
+      <ol>
+        <li class="entry">
+          <p class="entry-date">Jul 2025 &ndash; Jul 2026</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Coding Instructor <span class="sep">&middot;</span> UOB My Digital Space</h3>
+            <p class="entry-desc">
+              Delivered a year-long coding curriculum for the Ruang Guru x UOB program: Scratch Jr for
+              elementary students and Python for senior high students, reaching 120 students across 4 partner
+              schools and completing all 48 planned sessions on schedule. Mentored 43 students to the semifinal
+              and 3 to the final round of the UOB My Digital Space Codefest 2026, a national coding competition.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>Python</li><li>Scratch Jr</li><li>Teaching</li><li>Mentoring</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Jun 2026</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Cybersecurity Speaker <span class="sep">&middot;</span> Google Developer Groups on Campus USU</h3>
+            <p class="entry-desc">
+              Delivered a hands-on session on Reverse Engineering &amp; Binary Analysis to 70+ participants,
+              covering assembly, static and dynamic analysis, disassembly, and buffer overflow fundamentals with
+              Ghidra and GDB. Designed a custom TryHackMe room with CTF-style challenges so participants could
+              practice binary analysis, debugging, and basic exploitation.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>Ghidra</li><li>GDB</li><li>Reverse Engineering</li><li>TryHackMe</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Feb &ndash; Jun 2026</p>
+          <div class="entry-body">
+            <h3 class="entry-title">
+              Freelance WordPress Developer <span class="sep">&middot;</span>
+              <a href="https://azerothpm.com" target="_blank" rel="noopener noreferrer">Azeroth Property Management<span class="sr-only"> (opens in a new tab)</span></a>
+            </h3>
+            <p class="entry-desc">
+              Designed and built a custom WordPress property management system over four months, from
+              architecture and content structure to deployment. Implemented ACF-based content management and
+              automated listing logic that supports 80+ live property listings, and delivered it to positive
+              client feedback.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>WordPress</li><li>ACF</li><li>PHP</li><li>Client project</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Sep 2023 &ndash; Dec 2025</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Laboratory Teaching Assistant <span class="sep">&middot;</span> IT Laboratory Group, USU</h3>
+            <p class="entry-desc">
+              Instructed practicum sessions across five courses (Web Programming, Data Structures &amp;
+              Algorithms, Data Communications &amp; Computer Networks, Integrative Programming, and Network
+              Design &amp; Administration) for 150+ undergraduate IT students. Guided a Web Programming group to a
+              final project later awarded Top 1 Best Final Project in the IT program (2023/2024), and mentored
+              student groups in implementing redesigned network architectures with Software-Defined Networking.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>Web Programming</li><li>Networking</li><li>SDN</li><li>Mentoring</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Mar &ndash; Jun 2025</p>
+          <div class="entry-body">
+            <h3 class="entry-title">IT Support Intern <span class="sep">&middot;</span> Kanwil Ditjen Perbendaharaan Sumatera Utara</h3>
+            <p class="entry-desc">
+              Provided daily IT support and troubleshooting, and monitored and evaluated ICT infrastructure
+              (Monev). Designed and delivered a phishing-awareness training for 40+ staff, and built a data
+              visualization dashboard while migrating reporting data to Google Sites for faster access.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>IT Support</li><li>Security Awareness</li><li>Data Visualization</li><li>Google Sites</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Sep &ndash; Dec 2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Committee Chairperson <span class="sep">&middot;</span> Information Technology Christmas Committee, USU</h3>
+            <p class="entry-desc">
+              Led a 67-member committee across two student cohorts and seven divisions, resolving early
+              miscommunication by clarifying roles and encouraging open communication across seniority levels.
+              Revived the annual Christmas event after a one-year hiatus for 200+ attendees and raised over
+              Rp31 million in three months, exceeding the fundraising target.
+            </p>
+            <ul class="tags" aria-label="Skills used">
+              <li>Leadership</li><li>Event management</li><li>Fundraising</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" aria-label="Projects">
+      <h2 class="section-title">Projects</h2>
+      <ul class="project-list">
+
+        <!-- Merdeka Siber pentest report -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Penetration Tester</p>
+              <h3 class="project-title">
+                <a class="project-link" href="https://drive.google.com/file/d/16enmjDkdSbmKZDZFic-MVA8EXvRhiY6D/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <span>Web Application Penetration Test Report: Merdeka Siber Lab<span class="sr-only"> (opens in a new tab)</span></span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                Penetration test on a simulated web application using Burp Suite (Proxy, Intruder, and Repeater)
+                to identify and document 8 vulnerabilities, including Open Redirect, Username Enumeration, IDOR,
+                and Unrestricted File Upload. Delivered mitigation recommendations based on CVSS 3.1 scoring and
+                OWASP/CWE best practices.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>Burp Suite</li><li>OWASP</li><li>CWE</li><li>CVSS 3.1</li>
+              </ul>
+            </div>
+            <div class="project-media">
+              <img src="images/proj-merdeka-report.avif" alt="Executive summary page of the Merdeka Siber penetration testing report listing security findings and severity levels" loading="lazy" />
             </div>
           </div>
+        </li>
 
-          <div class="terminal-body">
-            <div class="terminal-main-line">
-              <span class="prompt-sym">&gt;</span>
-              <span class="prompt-name">Imanuel M.T. Manullang</span>
-            </div>
-            <div class="terminal-sub-role">App Developer &amp; Security</div>
-
-            <div class="terminal-status-line">
-              <span class="status-asterisk">*</span>
-              <span class="status-text">Open to work</span>
-              <span class="status-sep">·</span>
-              <span class="status-loc">Medan, Indonesia</span>
-            </div>
-
-            <div class="terminal-divider"></div>
-
-            <div class="terminal-contacts">
-              <div class="contact-row">
-                <span class="contact-prompt">&gt;</span>
-                <span class="contact-label">email</span>
-                <a href="mailto:imanuelmtm@gmail.com" class="contact-val">imanuelmtm@gmail.com</a>
+        <!-- ITLG -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Backend Engineer</p>
+              <h3 class="project-title">
+                <a class="project-link" href="http://itlgcloud.my.id/" target="_blank" rel="noopener noreferrer">
+                  <span>ITLG Lab Management System<span class="sr-only"> (opens in a new tab)</span></span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                Engineered the backend architecture (Laravel, REST APIs) of a laboratory platform, securing the
+                APIs with JWT authentication and role-based access control for Admin, Assistant, and User roles.
+                Built a QR-based attendance and access system with real-time monitoring, and collaborated on
+                database design and deployment with PostgreSQL.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>Laravel</li><li>REST API</li><li>JWT</li><li>PostgreSQL</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/welmnlg/lab_management_system" target="_blank" rel="noopener noreferrer">
+                  GitHub <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
+                </a>
               </div>
-              <div class="contact-row">
-                <span class="contact-prompt">&gt;</span>
-                <span class="contact-label">linkedin</span>
-                <a href="https://id.linkedin.com/in/imanuelmnllg" target="_blank" rel="noopener" class="contact-val">in/imanuelmnllg ↗</a>
+            </div>
+            <div class="project-media">
+              <img src="images/proj-itlg-dashboard.avif" alt="ITLG Lab Management System dashboard showing four lab room statuses and a weekly schedule table" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- ERP prototype -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Business Analyst &amp; Prototype Designer</p>
+              <h3 class="project-title">
+                <a class="project-link" href="https://figma.com/design/YYNlt8YzztwNar942dcp1G/ESD" target="_blank" rel="noopener noreferrer">
+                  <span>ERP Prototype: Toko Aini Seragam Sekolah<span class="sr-only"> (opens in a new tab)</span></span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                Analyzed sales, inventory, finance, and HR processes at a 15-year manual uniform retailer, then
+                prototyped Inventory, Admin, and Employee modules with real-time stock sync and role-based
+                access. Final grade: B+.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>Figma</li><li>Business analysis</li><li>ERP design</li>
+              </ul>
+            </div>
+            <div class="project-media">
+              <img src="images/cover-erp.avif" alt="Cover graphic for the ERP system prototype for Toko Aini Seragam Sekolah" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- Go Campus -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Backend Developer</p>
+              <h3 class="project-title">
+                <a class="project-link" href="projects/gocampus.html">
+                  <span>Go Campus</span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                Semantic web-based search engine for universities across Indonesia, modeled in Protégé with an
+                RDF dataset. Earned an A grade in the Semantic Web course.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>Protégé</li><li>RDF</li><li>Laravel</li><li>PHP</li>
+              </ul>
+            </div>
+            <div class="project-media">
+              <img src="images/proj-gocampus-home.avif" alt="Homepage of the Go Campus semantic web search engine for Indonesian universities" loading="lazy" />
+            </div>
+          </div>
+        </li>
+
+        <!-- AmbiVerse -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Backend Developer</p>
+              <h3 class="project-title">
+                <a class="project-link" href="projects/ambiverse.html">
+                  <span>AmbiVerse</span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                All-in-one learning and tryout platform for high school students preparing for Indonesia's
+                UTBK/SNBT exams. Winner, Best Final Project: HIMATIF x ITLG 2022.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>PHP</li><li>Laravel</li><li>MySQL</li><li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener noreferrer">
+                  GitHub <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
+                </a>
               </div>
-              <div class="contact-row">
-                <span class="contact-prompt">&gt;</span>
-                <span class="contact-label">github</span>
-                <a href="https://github.com/welmnlg" target="_blank" rel="noopener" class="contact-val">github.com/welmnlg ↗</a>
-              </div>
+            </div>
+            <div class="project-media">
+              <img src="images/proj-ambiverse-home.avif" alt="Landing page of AmbiVerse, an exam preparation platform for Indonesian university entrance tests" loading="lazy" />
             </div>
           </div>
+        </li>
 
-          <div class="terminal-footer">
-            <div class="terminal-cmd-line">
-              <span class="prompt-sym dim">&gt;</span>
-              <span class="terminal-cursor"></span>
+        <!-- Pandhu -->
+        <li class="project-item">
+          <div class="project-card">
+            <div class="project-body">
+              <p class="project-role">Fullstack Developer</p>
+              <h3 class="project-title">
+                <a class="project-link" href="projects/pandhu.html">
+                  <span>Pandhu: Trip Helper</span>
+                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+              </h3>
+              <p class="project-desc">
+                TripAdvisor-inspired travel discovery platform with a full CMS for attractions, hotels, and
+                restaurants, built front-to-back with validated CRUD routes.
+              </p>
+              <ul class="tags" aria-label="Tools used">
+                <li>Laravel</li><li>MySQL</li><li>Tailwind</li><li>Bootstrap</li>
+              </ul>
             </div>
-            <div class="terminal-mascot" aria-hidden="true">
-              <svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Body -->
-                <rect x="5" y="4" width="16" height="13" fill="#c8653b"/>
-                <!-- Snout -->
-                <rect x="21" y="9" width="6" height="7" fill="#c8653b"/>
-                <!-- Eyes -->
-                <rect x="10" y="7" width="2" height="3" fill="#111111"/>
-                <rect x="18" y="7" width="2" height="3" fill="#111111"/>
-                <!-- Legs -->
-                <rect x="5" y="17" width="2" height="5" fill="#c8653b"/>
-                <rect x="3" y="21" width="2" height="2" fill="#c8653b"/>
-                <rect x="9" y="17" width="2" height="5" fill="#c8653b"/>
-                <rect x="8" y="21" width="2" height="2" fill="#c8653b"/>
-                <rect x="15" y="17" width="2" height="5" fill="#c8653b"/>
-                <rect x="15" y="21" width="2" height="2" fill="#c8653b"/>
-                <rect x="19" y="17" width="2" height="5" fill="#c8653b"/>
-                <rect x="20" y="21" width="2" height="2" fill="#c8653b"/>
-                <!-- Sword / tool -->
-                <rect x="23" y="19" width="4" height="2" fill="#8e8e93"/>
-                <rect x="27" y="16" width="3" height="3" fill="#8e8e93"/>
-                <rect x="30" y="13" width="2" height="3" fill="#8e8e93"/>
-              </svg>
+            <div class="project-media">
+              <img src="images/proj-pandhu-home.avif" alt="Landing page of Pandhu, a travel discovery platform inspired by TripAdvisor" loading="lazy" />
             </div>
           </div>
-        </aside>
-      </div>
-      
-    </div>
-  </section>
+        </li>
 
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="label">About</div>
-        <div class="about-copy">
-          <p>
-            I'm an Information Technology student with a growing passion for building
-            secure, thoughtful, and well-crafted applications. My long-term goal is to
-            become a security consultant, and I believe that understanding security
-            starts with understanding how things are built. That's why I'm eager to
-            explore app development from the developer's perspective, strengthening
-            both sides of my understanding.
-          </p>
-          <p>
-            I've had a small taste of that mindset through projects like the ITLG Lab
-            Management System, where I worked on the backend architecture and
-            implemented authentication and access control. That experience showed me
-            how closely good development and good security go hand in hand.
-          </p>
-          <p>
-            I learn best by doing, asking questions, and working closely with others.
-            I'm genuinely excited to keep growing as a developer, contribute to the
-            community, and stay curious about what I can learn next.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </ul>
+    </section>
 
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <span class="section-note">7 projects</span>
-      </div>
-      
-      <div class="project-grid">
+    <!-- Certificates & Training -->
+    <section id="certificates" aria-label="Certificates and training">
+      <h2 class="section-title">Certificates &amp; Training</h2>
+      <ol>
+        <li class="entry">
+          <p class="entry-date">2026</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Google Cybersecurity Certificate <span class="sep">&middot;</span> Coursera</h3>
+            <p class="entry-desc">
+              Nine-course professional certificate covering networks, SIEM tools, Python, Linux, and SQL for
+              entry-level cybersecurity roles.
+            </p>
+            <a class="entry-link" href="https://coursera.org/account/accomplishments/specialization/C41JAGXEO7JL" target="_blank" rel="noopener noreferrer">
+              View credential <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
+        </li>
 
-        <!-- 1. ERP prototype: Toko Aini Seragam Sekolah -->
-        <a class="project-card" href="https://figma.com/design/YYNlt8YzztwNar942dcp1G/ESD" target="_blank" rel="noopener">
-          <div class="project-media">
-            <img src="images/cover-erp.avif" alt="Cover graphic for the ERP system prototype for Toko Aini Seragam Sekolah" loading="lazy" />
-            <span class="link-badge">↗ Figma</span>
+        <li class="entry">
+          <p class="entry-date">Sep 2025</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Cyber Sentinel Secure <span class="sep">&middot;</span> X-code</h3>
+            <p class="entry-desc">Hands-on cybersecurity training program by X-code, PT. Teknologi Server Indonesia.</p>
           </div>
-          <div class="project-body">
-            <p class="project-role">Business Analyst &amp; Prototype Designer</p>
-            <h3>ERP Prototype: Toko Aini Seragam Sekolah</h3>
-            <p>Analyzed sales, inventory, finance, and HR processes at a 15-year manual uniform retailer, then prototyped Inventory, Admin, and Employee modules with real-time stock sync and role-based access. Final grade: B+.</p>
-            <div class="project-tools">
-              <span>Figma</span><span>Business analysis</span><span>ERP design</span>
-            </div>
-          </div>
-        </a>
-        <!-- 2. ITLG Lab Management System -->
-        <a class="project-card" href="http://itlgcloud.my.id/" target="_blank" rel="noopener">
-          <div class="project-media">
-            <img src="images/proj-itlg-dashboard.avif" alt="ITLG Lab Management System dashboard showing four lab room statuses and a weekly schedule table" loading="lazy" />
-            <span class="link-badge">↗ Live site</span>
-          </div>
-          <div class="project-body">
-            <p class="project-role">Backend Developer</p>
-            <h3>ITLG Lab Management System</h3>
-            <p>Laboratory management platform for the IT Laboratory Group: JWT auth, role-based access for three user roles, and a QR-based attendance system with real-time monitoring.</p>
-            <div class="project-tools">
-              <span>Laravel</span><span>REST API</span><span>JWT</span><span>PostgreSQL</span>
-            </div>
-          </div>
-        </a>
+        </li>
 
-        <!-- 3. Merdeka Siber Lab Report -->
-        <a class="project-card" href="https://drive.google.com/file/d/16enmjDkdSbmKZDZFic-MVA8EXvRhiY6D/view?usp=sharing" target="_blank" rel="noopener">
-          <div class="project-media">
-            <img src="images/proj-merdeka-report.avif" alt="Executive summary page of the Merdeka Siber penetration testing report listing security findings and severity levels" loading="lazy" />
-            <span class="link-badge">↗ Report</span>
+        <li class="entry">
+          <p class="entry-date">Dec 2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Ethical Hacker <span class="sep">&middot;</span> Cisco Networking Academy</h3>
+            <p class="entry-desc">
+              Penetration testing methodology, vulnerability exploitation across web, cloud, mobile, and IoT,
+              and post-exploitation reporting.
+            </p>
           </div>
-          <div class="project-body">
-            <p class="project-role">Penetration Tester</p>
-            <h3>Report for Merdeka Siber's Lab</h3>
-            <p>Penetration test on a simulated web app using Burp Suite with 8 documented vulnerabilities including Open Redirect, IDOR, and Unrestricted File Upload, with CVSS 3.1-scored mitigations.</p>
-            <div class="project-tools">
-              <span>Burp Suite</span><span>OWASP</span><span>CVSS 3.1</span>
-            </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Aug &ndash; Sep 2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Security Manpower Training Program (SMTP) Indonesia <span class="sep">&middot;</span> KISIA &amp; NSHC</h3>
+            <p class="entry-desc">30-hour security training program, 12 Aug to 6 Sep 2024.</p>
           </div>
-        </a>
-        
-        <!-- 4. Azeroth Property Management (freelance) -->
-        <a class="project-card" href="https://azerothpm.com" target="_blank" rel="noopener">
-          <div class="project-media">
-            <img src="images/cover-azeroth.avif" alt="Cover graphic for the Azeroth Property Management WordPress project" loading="lazy" />
-            <span class="link-badge">↗ Live site</span>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">Apr 2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">NDG Linux Essentials <span class="sep">&middot;</span> Cisco Networking Academy</h3>
+            <p class="entry-desc">Linux fundamentals course.</p>
           </div>
-          <div class="project-body">
-            <p class="project-role">Freelance WordPress Developer · Feb – Jun 2026</p>
-            <h3>Azeroth Property Management</h3>
-            <p>Custom WordPress property management system built over 4 months for a real client, from architecture and content structure through deployment, with positive feedback on the final result.</p>
-            <div class="project-tools">
-              <span>WordPress</span><span>Custom theme</span><span>PHP</span><span>Client project</span>
-            </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">&mdash;</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Android Application Security Fundamentals <span class="sep">&middot;</span> Mobile Hacking Lab</h3>
+            <p class="entry-desc">Training on the fundamentals of Android application security.</p>
           </div>
-        </a>
-        <!-- 5. Go Campus -->
-        <a class="project-card" href="projects/gocampus.html">
-          <div class="project-media">
-            <img src="images/proj-gocampus-home.avif" alt="Homepage of the Go Campus semantic web search engine for Indonesian universities" loading="lazy" />
-            <span class="link-badge">Project page</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" aria-label="Achievements">
+      <h2 class="section-title">Achievements</h2>
+      <ol>
+        <li class="entry">
+          <p class="entry-date">2025</p>
+          <div class="entry-body">
+            <h3 class="entry-title">3rd Place <span class="sep">&middot;</span> Hackathon Siber Tangguh Bangsa Merdeka, Fakultas Vokasi USU</h3>
+            <p class="entry-desc">
+              Solved 30 web exploitation challenges as part of team "Hengker Pesbuk" in a regional Capture the
+              Flag (CTF) hackathon.
+            </p>
           </div>
-          <div class="project-body">
-            <p class="project-role">Backend Developer</p>
-            <h3>Go Campus</h3>
-            <p>Semantic web-based search engine for universities across Indonesia, modeled in Protégé with an RDF dataset. Earned an A grade in the Semantic Web course.</p>
-            <div class="project-tools">
-              <span>Protégé</span><span>RDF</span><span>Laravel</span><span>PHP</span>
-            </div>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">Awardee <span class="sep">&middot;</span> Bakti BCA Scholarship, PT Bank Central Asia Tbk</h3>
+            <p class="entry-desc">
+              Selected from over 1,000 applicants; received educational funding and a one-year self-development
+              program.
+            </p>
           </div>
-        </a>
+        </li>
 
-        <!-- 6. AmbiVerse -->
-        <div class="project-card">
-          <a class="project-media" href="projects/ambiverse.html" aria-label="AmbiVerse project page">
-            <img src="images/proj-ambiverse-home.avif" alt="Landing page of AmbiVerse, an exam preparation platform for Indonesian university entrance tests" loading="lazy" />
-            <span class="link-badge">Project page</span>
-          </a>
-          <div class="project-body">
-            <p class="project-role">Backend Developer</p>
-            <h3><a href="projects/ambiverse.html" style="color: inherit;">AmbiVerse</a></h3>
-            <p>All-in-one learning and tryout platform for high school students preparing for Indonesia's UTBK/SNBT exams. Winner, Best Final Project: HIMATIF x ITLG 2022.</p>
-            <div class="project-tools">
-              <span>PHP</span><span>Laravel</span><span>MySQL</span><span>JavaScript</span>
-            </div>
-            <div class="project-card-links">
-              <a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener" class="gh-link">↗ GitHub</a>
-            </div>
+        <li class="entry">
+          <p class="entry-date">2024</p>
+          <div class="entry-body">
+            <h3 class="entry-title">1st Place <span class="sep">&middot;</span> University Business Impact Plan Competition, BCA</h3>
+            <p class="entry-desc">
+              Assisted the MSME product "Inaklin" in driving sales growth and product awareness.
+            </p>
           </div>
-        </div>
-        
-        <!-- 7. Pandhu -->
-        <a class="project-card" href="projects/pandhu.html">
-          <div class="project-media">
-            <img src="images/proj-pandhu-home.avif" alt="Landing page of Pandhu, a travel discovery platform inspired by TripAdvisor" loading="lazy" />
-            <span class="link-badge">Project page</span>
+        </li>
+
+        <li class="entry">
+          <p class="entry-date">2022</p>
+          <div class="entry-body">
+            <h3 class="entry-title">1st Winner, Best Web Programming Final Project <span class="sep">&middot;</span> HIMATIF x ITLG Mini Competition</h3>
+            <p class="entry-desc">
+              Recognized as the best web programming project among peers in the same cohort, for AmbiVerse.
+            </p>
           </div>
-          <div class="project-body">
-            <p class="project-role">Fullstack Developer</p>
-            <h3>Pandhu: Trip Helper</h3>
-            <p>TripAdvisor-inspired travel discovery platform with a full CMS for attractions, hotels, and restaurants, built front-to-back with validated CRUD routes.</p>
-            <div class="project-tools">
-              <span>Laravel</span><span>MySQL</span><span>Tailwind</span><span>Bootstrap</span>
-            </div>
-          </div>
-        </a>
-        
-        
-        
-      </div>
-    </div>
-  </section>
-  
-  <section id="certificates">
-    <div class="container">
-      <div class="section-head">
-        <h2>Trainings &amp; certificates</h2>
-      </div>
-      <div class="entry-list">
+        </li>
+      </ol>
+    </section>
 
-        <div class="entry">
-          <div class="entry-meta">2026</div>
-          <div>
-            <h3>Google Cybersecurity Certificate</h3>
-            <p>Coursera · 9-course professional certificate covering networks, SIEM tools, Python, Linux, and SQL for entry-level cybersecurity roles.</p>
-            <a class="entry-link" href="https://coursera.org/account/accomplishments/specialization/C41JAGXEO7JL" target="_blank" rel="noopener">View credential ↗</a>
-          </div>
-        </div>
-        <div class="entry">
-          <div class="entry-meta">Sep 2025</div>
-          <div>
-            <h3>Cyber Sentinel Secure</h3>
-            <p>X-code, PT. Teknologi Server Indonesia · hands-on training program.</p>
-          </div>
-        </div>
+    <footer class="footer">
+      <p>
+        Want to talk about penetration testing, backend development, or your next project? Send a message to
+        <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.
+      </p>
+      <p class="copy">&copy; 2026 Imanuel M.T. Manullang</p>
+    </footer>
 
-        <div class="entry">
-          <div class="entry-meta">Apr 2024</div>
-          <div>
-            <h3>Security Manpower Training Program (SMTP) Indonesia</h3>
-            <p>NSHC &amp; KISIA · 30-hour training period, 12 Aug to 6 Sep 2024.</p>
-          </div>
-        </div>
+  </main>
+</div>
 
+<script>
+/* Scroll spy: highlights the nav item of the section currently being read,
+   whether the user clicked the nav, scrolled, or used the keyboard. */
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  var sections = links.map(function (link) {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  var ticking = false;
 
-        <div class="entry">
-          <div class="entry-meta">Apr 2024</div>
-          <div>
-            <h3>NDG Linux Essentials Course</h3>
-            <p>Cisco Networking Academy · Linux fundamentals partner course.</p>
-          </div>
-        </div>
+  function update() {
+    ticking = false;
+    var line = window.innerHeight * 0.3; // reading line, 30% from the top
+    var current = sections[0];
 
-        <div class="entry">
-          <div class="entry-meta">Dec 2024</div>
-          <div>
-            <h3>Ethical Hacker</h3>
-            <p>Cisco Networking Academy · penetration testing methodology, vulnerability exploitation across web, cloud, mobile and IoT, and post-exploitation reporting.</p>
-          </div>
-        </div>
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].getBoundingClientRect().top <= line) current = sections[i];
+    }
 
-      </div>
-    </div>
-  </section>
+    // Short last sections may never reach the reading line
+    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    if (atBottom) current = sections[sections.length - 1];
 
-  <section id="achievements">
-    <div class="container">
-      <div class="section-head">
-        <h2>Achievements</h2>
-      </div>
-      <div class="entry-list">
+    links.forEach(function (link, i) {
+      var active = sections[i] === current;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
+  }
 
-        <div class="entry">
-          <div class="entry-meta">2025</div>
-          <div>
-            <h3>3rd Place, Hackathon Siber Tangguh Bangsa Merdeka · Fakultas Vokasi USU</h3>
-            <p>Solved 30 web exploitation challenges as part of team "Hengker Pesbuk" in a regional Capture the Flag hackathon.</p>
-          </div>
-        </div>
-        <div class="entry">
-          <div class="entry-meta">2024</div>
-          <div>
-            <h3>Bakti BCA Scholarship · PT Bank Central Asia Tbk</h3>
-            <p>Selected from over 1,000 applicants; awarded educational funding and a one-year self-development program.</p>
-          </div>
-        </div>
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  }
 
-        <div class="entry">
-          <div class="entry-meta">2024</div>
-          <div>
-            <h3>1st Place, University Business Impact Plan Competition · BCA</h3>
-            <p>Helped the MSME product "Inaklin" create a positive impact on sales growth and product awareness.</p>
-          </div>
-        </div>
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 
-
-        <div class="entry">
-          <div class="entry-meta">2022</div>
-          <div>
-            <h3>1st Winner, Best Web Programming Final Project · HIMATIF x ITLG Mini Competition</h3>
-            <p>Recognized for the best web programming project among peers in the same cohort, with AmbiVerse.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section id="contact">
-    <div class="container">
-      <div class="contact-panel">
-        <div>
-          <h2>Let's talk about security, backend, or your next project.</h2>
-          <p>Open to internships, collaborations, and conversations about application security.</p>
-        </div>
-        <div class="contact-links">
-          <a href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>
-          <a href="tel:+6282277666261">+62 822-7766-6261</a>
-          <a href="https://id.linkedin.com/in/imanuelmnllg" target="_blank" rel="noopener">LinkedIn ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <span>© 2026 Imanuel M.T. Manullang</span>
-    <span>Built with HTML &amp; CSS</span>
-  </div>
-</footer>
-
+  /* Cursor glow */
+  var root = document.documentElement;
+  window.addEventListener('mousemove', function (e) {
+    root.style.setProperty('--mx', e.clientX + 'px');
+    root.style.setProperty('--my', e.clientY + 'px');
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>

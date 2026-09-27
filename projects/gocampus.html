@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,50 +11,43 @@
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a href="../index.html#top" class="logo"><span class="mark">IM</span> Imanuel Manullang</a>
-    <nav>
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#projects">Projects</a>
-      <a href="../index.html#achievements">Achievements</a>
-      <a href="../index.html#certificates">Certificates</a>
-      <a href="../index.html#contact">Contact</a>
-    </nav>
+<div class="spotlight" aria-hidden="true"></div>
+
+<main class="detail-page">
+  <a class="back-link" href="../index.html#projects">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z"/></svg>
+    Back to projects
+  </a>
+
+  <div class="detail-hero">
+    <p class="project-role">Backend Developer</p>
+    <h1>Go Campus</h1>
+    <p class="lede">A semantic web-based search engine for universities across Indonesia, built to help students find their ideal campus with more accurate, structured search results.</p>
   </div>
-</header>
 
-<main>
-  <div class="container">
-    <div class="detail-hero">
-      <a class="back-link" href="../index.html#projects">← Back to projects</a>
-      <p class="project-role">Backend Developer</p>
-      <h1>Go Campus</h1>
-      <p class="lede">A semantic web-based search engine for universities across Indonesia, built to help students find their ideal campus with more accurate, structured search results.</p>
-    </div>
+  <div class="detail-meta">
+    <div><span>Role</span><strong>Backend Developer</strong></div>
+    <div><span>Tools</span><strong>Protégé, Laravel, PHP, RDF</strong></div>
+    <div><span>Context</span><strong>Semantic Web course project</strong></div>
+    <div><span>Result</span><strong>A grade</strong></div>
+  </div>
 
-    <div class="detail-meta">
-      <div><span>Role</span><strong>Backend Developer</strong></div>
-      <div><span>Tools</span><strong>Protégé, Laravel, PHP, RDF</strong></div>
-      <div><span>Context</span><strong>Semantic Web course project</strong></div>
-      <div><span>Result</span><strong>A grade</strong></div>
-    </div>
-
-    <div class="detail-columns">
-      <div class="label">Contribution</div>
-      <ul>
+  <div class="detail-columns">
+    <div class="label">Contribution</div>
+    <ul>
         <li>Designed and implemented the core dataset for the semantic web search engine.</li>
         <li>Used Protégé to model and input relevant university data.</li>
         <li>Built a structured framework using RDF (Resource Description Framework).</li>
         <li>Enabled data integration with external sources for improved search precision.</li>
         <li>Contributed to a university search tool that delivered accurate and efficient results.</li>
-      </ul>
-    </div>
-    <div class="note-banner">
-      This project doesn't have a public repo or live demo yet; it was built and graded as part of a Semantic Web university course. The screenshots below are from the original submission.
-    </div>
+    </ul>
+  </div>
 
-    <div class="detail-gallery">
+  <div class="note-banner">
+    This project doesn't have a public repo or live demo yet; it was built and graded as part of a Semantic Web university course. The screenshots below are from the original submission.
+  </div>
+
+  <div class="detail-gallery">
       <figure>
         <img src="../images/proj-gocampus-home.avif" alt="Homepage of the Go Campus website with a university search bar" />
         <figcaption>Homepage: search entry point for finding a university</figcaption>
@@ -63,17 +56,21 @@
         <img src="../images/proj-gocampus-protege.avif" alt="University dataset modeled in Protégé using RDF classes and properties" />
         <figcaption>University dataset modeled in Protégé using RDF</figcaption>
       </figure>
-    </div>
-
   </div>
+
+  <footer class="footer">
+    <p>Questions about this project? Email <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.</p>
+    <p class="copy">&copy; 2026 Imanuel M.T. Manullang</p>
+  </footer>
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <span>© 2026 Imanuel M.T. Manullang</span>
-    <span>Built with HTML &amp; CSS</span>
-  </div>
-</footer>
+<script>
+window.addEventListener('mousemove', function (e) {
+  var r = document.documentElement;
+  r.style.setProperty('--mx', e.clientX + 'px');
+  r.style.setProperty('--my', e.clientY + 'px');
+}, { passive: true });
+</script>
 
 </body>
 </html>
