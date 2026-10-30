@@ -1,623 +1,811 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<link rel="icon" type="image/png" href="images/logo.png" />
-<title>Imanuel Portofolio</title>
-<meta name="description" content="Imanuel M.T. Manullang is a Penetration Tester and Information Technology student who finds and reports vulnerabilities in web applications." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imanuel M.T. Manullang – Penetration Tester & Backend Engineer</title>
+<meta name="description" content="Portfolio of Imanuel M.T. Manullang: Penetration Tester, Backend Engineer, and Information Technology student at Universitas Sumatera Utara.">
+<meta property="og:title" content="Imanuel M.T. Manullang – Penetration Tester Portfolio"><meta property="og:description" content="Interactive 3D monitor-wall portfolio of Imanuel M.T. Manullang."><meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style id="theme-style">
+:root{
+  --persp:1700px;--cam:12;--g:.22;
+  --bg:#090708;--bg-top:#1d1115;
+  --ac:#c81e32;--ac-hov:#dc2638;--ac2:#fb7185;--glow-rgb:200,30,50;
+  --tx:#f6eff0;--mu:#b8a3a7;--pn:#120e10;--pn2:#1b1316;
+  --cd:#1a1215;--bd:#312025;--tag-bg:#2e151c;--tag-tx:#fecdd3;
+  --btn-g:#261a1e;--btn-gt:#f3dce0;--tl-bd:#3a2229;--term-bg:#0b0809;--term-tx:#f2d5da;
+  --sh-top:rgba(255,255,255,.06);--sh-vig:rgba(0,0,0,.38)
+}
+body.screen-light{
+  --tx:#1c1214;--mu:#664f54;--pn:#faf5f6;--pn2:#f2e8ea;
+  --cd:#ffffff;--bd:#e5d4d8;--tag-bg:#ffe4e8;--tag-tx:#9f1239;
+  --ac2:#be123c;--btn-g:#ece0e3;--btn-gt:#2e181d;--tl-bd:#dfc8cd;--term-bg:#161012;--term-tx:#f5dce0;
+  --sh-top:rgba(255,255,255,.45);--sh-vig:rgba(40,15,22,.08)
+}
+</style>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);font:13px/1.48 Inter,system-ui,sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+body.stack{overflow:auto}
 
-<!-- Icon sprite -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-arrow" viewBox="0 0 20 20">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"/>
-  </symbol>
-  <symbol id="i-github" viewBox="0 0 24 24">
-    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-  </symbol>
-  <symbol id="i-linkedin" viewBox="0 0 24 24">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-  </symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24">
-    <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-  </symbol>
+/* ===== NIGHT STUDIO ROOM ENVIRONMENT (Always Night Mode, Strictly Behind Monitors) ===== */
+.stage{position:fixed;inset:0;z-index:2;overflow:hidden;background:radial-gradient(85% 68% at 50% 38%,var(--bg-top),var(--bg) 74%)}
+body.focus .stage{z-index:45}
+.room-lamp{position:absolute;top:0;left:50%;transform:translateX(-50%);width:clamp(260px,24vw,380px);height:5px;background:linear-gradient(90deg,transparent,var(--ac2) 20%,#fff 50%,var(--ac2) 80%,transparent);border-radius:0 0 8px 8px;box-shadow:0 2px 18px rgba(var(--glow-rgb),.7),0 6px 45px rgba(var(--glow-rgb),.45);z-index:0;pointer-events:none;transition:opacity .5s}
+.room-cone{position:absolute;inset:0;background:radial-gradient(48% 55% at 50% 0%,rgba(var(--glow-rgb),.14),transparent 72%);z-index:0;pointer-events:none;transition:opacity .5s}
+.room-ambient{position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(2px 2px at 22% 28%,rgba(var(--glow-rgb),.32),transparent),radial-gradient(1.5px 1.5px at 38% 18%,rgba(var(--glow-rgb),.24),transparent),radial-gradient(2px 2px at 64% 24%,rgba(var(--glow-rgb),.28),transparent),radial-gradient(1.5px 1.5px at 77% 34%,rgba(var(--glow-rgb),.2),transparent);transition:opacity .5s}
+
+/* ===== 3D WORLD & MONITOR ARMS (Stands strictly behind all monitors) ===== */
+.arms{position:absolute;inset:0;perspective:var(--persp);perspective-origin:50% 54%;pointer-events:none;z-index:1}
+.arm-holder{position:absolute;left:50%;top:54%;margin-left:calc(var(--w)*-.5px);margin-top:calc(var(--h)*-.5px);width:calc(var(--w)*1px);height:calc(var(--h)*1px);transition:transform 1.35s cubic-bezier(.22,1,.32,1)}
+.arm{position:absolute;left:50%;bottom:-32px;width:12px;height:40px;margin-left:-6px;background:linear-gradient(90deg,#141112,#2e2528,#141112);border-radius:3px;box-shadow:0 6px 14px rgba(0,0,0,.6)}
+body.focus .arms{opacity:.15;transition:opacity .5s}
+
+.world{position:absolute;inset:0;perspective:var(--persp);perspective-origin:50% 54%;transform-style:flat;z-index:2}
+.bgp{position:absolute;left:50%;top:54%;pointer-events:none;z-index:0}
+
+/* ===== MONITORS & SLOWER SMOOTH HOVER/FOCUS ANIMATION ===== */
+.mon{position:absolute;left:50%;top:54%;margin-left:calc(var(--w)*-.5px);margin-top:calc(var(--h)*-.5px);width:calc(var(--w)*1px);height:calc(var(--h)*1px);transform-style:preserve-3d;transition:transform 1.35s cubic-bezier(.22,1,.32,1);outline:0;cursor:pointer;z-index:var(--zi,2)}
+body:not(.focus) .mon:hover,body:not(.focus) .mon:focus-visible{--g:.48;z-index:25!important}
+body.focus .mon:not(.focus){--g:.04;pointer-events:none}
+.mon.focus{--g:.52;cursor:default;z-index:50!important;transform-style:flat;transition:transform 1.1s cubic-bezier(.22,1,.32,1)}
+.mon.focus .rotor{transform-style:flat}
+
+.glow{position:absolute;inset:-28px;border-radius:36px;background:radial-gradient(closest-side,rgba(var(--glow-rgb),var(--g)),rgba(var(--glow-rgb),0) 78%);transform:translateZ(-10px);transition:opacity .5s;pointer-events:none}
+.mon.focus .glow{display:none}
+.ring{position:absolute;inset:-4px;border:2px solid var(--ac2);border-radius:15px;opacity:0;transform:translateZ(50px);pointer-events:none;z-index:12}
+.mon:focus-visible .ring{opacity:1}
+
+.rotor{position:absolute;inset:0;transform-style:preserve-3d}
+.fr{position:absolute;inset:0;border-radius:12px;padding:6px 6px 16px;background:linear-gradient(145deg,#2e2528,#171315);box-shadow:inset 0 0 0 1px #423337,0 16px 38px rgba(0,0,0,.6)}
+.led{position:absolute;right:16px;bottom:6px;width:4px;height:4px;border-radius:50%;background:var(--ac);box-shadow:0 0 6px var(--ac)}
+.panel{position:relative;width:100%;height:100%;border-radius:6px;overflow:hidden;background:radial-gradient(120% 100% at 20% 0,var(--pn2),var(--pn) 62%);color:var(--tx);padding:15px 17px;transition:background .3s,color .3s}
+.sheen{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,var(--sh-top),transparent 36%),radial-gradient(130% 130% at 50% 50%,transparent 68%,var(--sh-vig))}
+.dim{position:absolute;inset:0;background:rgba(7,5,6,.8);opacity:0;pointer-events:none;transition:opacity .5s;border-radius:12px;z-index:9}
+body.focus .mon:not(.focus) .dim{opacity:1}
+
+/* ===== 3D CURVED STRIPS (Top 3 Monitors) + LIVE INTERACTION ===== */
+.strips{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d;pointer-events:none;transition:opacity .3s}
+.st{position:absolute;top:0;overflow:hidden;backface-visibility:hidden}
+.mon.curved:not(.focus):not(.rot-anim) .rotor>.fr{opacity:0;transform:translateZ(18px);pointer-events:auto}
+.mon:not(.curved) .strips,.mon.focus .strips,.mon.rot-anim .strips{display:none}
+
+.rotctl{position:absolute;right:34px;bottom:-1px;width:26px;height:16px;border:0;border-radius:4px;background:#261e21;color:var(--ac2);font-size:12px;line-height:1;cursor:pointer;transform:translateZ(35px);z-index:10}
+.mon.focus .rotctl{transform:none}
+.rotctl:hover,.rotctl:focus-visible{background:var(--ac);color:#fff;outline:0}
+.handle{position:absolute;right:-8px;bottom:-8px;width:22px;height:22px;border-radius:50%;border:2px solid var(--ac2);opacity:0;cursor:grab;transform:translateZ(35px);touch-action:none;transition:opacity .2s;z-index:10}
+.mon.focus .handle{transform:none}
+.mon:hover .handle{opacity:.7}
+
+/* ===== UI INSIDE SCREENS ===== */
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;color:var(--tx)}
+.ph{display:flex;justify-content:space-between;align-items:center;color:var(--mu);font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+.ph b{color:var(--ac2);font-family:'JetBrains Mono',monospace;font-weight:500}
+.ph-right{display:flex;align-items:center;gap:6px}
+.tbtn{font:600 9.5px 'JetBrains Mono',monospace;color:var(--tx);background:var(--btn-g);border:1px solid var(--bd);border-radius:6px;padding:2px 7px;cursor:pointer;letter-spacing:.04em;transition:background .2s,border-color .2s}
+.tbtn:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+p{margin:5px 0}.mu{color:var(--mu)}
+.tag{font:500 10px 'JetBrains Mono',monospace;font-style:normal;padding:2px 7px;border-radius:99px;background:var(--tag-bg);color:var(--tag-tx);margin:2px 4px 2px 0;display:inline-block}
+.btn,.ar{font:500 11.5px Inter;color:#fff;background:var(--ac);border:0;border-radius:7px;padding:5px 10px;margin:4px 5px 0 0;text-decoration:none;display:inline-block;cursor:pointer;transition:background .2s,transform .15s}
+.btn:hover,.ar:hover{background:var(--ac-hov);transform:translateY(-1px)}
+.btn.g{background:var(--btn-g);color:var(--btn-gt);border:1px solid var(--bd)}
+.btn.g:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+
+/* Main Monitor (Profile) */
+.pg{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;height:calc(100% - 26px)}
+.av{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font:700 30px 'Space Grotesk';color:#fff;background:linear-gradient(135deg,var(--ac),#2a0810);box-shadow:0 0 0 4px var(--bd)}
+.pg h1{font-size:27px;line-height:1.12}
+.role{color:var(--ac2);font-weight:600;font-size:12.5px;margin:3px 0 6px}
+.sum{font-size:12px;line-height:1.45}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:7px;min-width:118px}
+.facts li{background:var(--cd);border:1px solid var(--bd);border-radius:9px;padding:7px 12px;color:var(--mu);font-size:10.5px}
+.facts b{display:block;font:700 18px 'Space Grotesk';color:var(--tx)}
+.portrait .pg{grid-template-columns:1fr;justify-items:center;text-align:center;align-content:start;gap:10px;padding-top:4px}
+.portrait .facts{grid-template-columns:repeat(3,1fr);width:100%}
+.portrait .pg h1{font-size:24px}
+
+/* Projects Carousel & Real Screenshots */
+.car{display:flex;flex-direction:column;height:calc(100% - 26px)}
+.vp{flex:1;min-height:0;overflow:hidden;border-radius:9px;touch-action:pan-y}
+.track{display:flex;height:100%;transition:transform .6s cubic-bezier(.3,.8,.3,1)}
+.slide{flex:0 0 100%;display:grid;grid-template-rows:1fr auto;gap:7px;cursor:pointer}
+.th{position:relative;border-radius:9px;overflow:hidden;display:grid;place-items:center;font:700 54px 'Space Grotesk';color:rgba(255,255,255,.3);background:#1a1114;border:1px solid var(--bd)}
+.th img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.th-badge{position:absolute;left:8px;top:8px;padding:2px 8px;border-radius:6px;background:rgba(15,10,12,.82);color:var(--ac2);font:500 10px 'JetBrains Mono',monospace;backdrop-filter:blur(4px)}
+.sb h3{font-size:15.5px;line-height:1.2}.sb p{color:var(--mu);font-size:11.5px;margin:2px 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-top:6px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--bd);margin:0 3px;cursor:pointer;transition:.2s}
+.dot.on{background:var(--ac2);transform:scale(1.2)}
+.ar{padding:2px 11px;margin:0;font-size:16px}
+.detail{display:none;height:calc(100% - 26px);overflow:auto;padding-right:4px}
+.mon.detail .car{display:none}.mon.detail .detail{display:block}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0}
+.shots img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--bd)}
+
+/* Timeline & Scrollable Panels */
+.scroll{overflow:auto;height:calc(100% - 26px);padding-right:6px;scrollbar-width:thin;scrollbar-color:var(--ac) transparent}
+.scroll::-webkit-scrollbar{width:6px}.scroll::-webkit-scrollbar-thumb{background:var(--ac);border-radius:9px}
+.tl{border-left:2px solid var(--tl-bd);margin-left:5px;padding-left:14px}
+.tl>div{position:relative;margin-bottom:12px}
+.tl>div:before{content:'';position:absolute;left:-20px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 3px var(--pn)}
+.tl h3{font-size:13px;line-height:1.25}.tl small{color:var(--ac2);font-weight:500;font-size:11px}.tl p{color:var(--mu);font-size:11.5px;margin:3px 0}
+
+/* Cards (Certs, Achievements, Community) */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:7px;height:calc(100% - 26px);overflow:auto;padding-right:4px;scrollbar-width:thin;scrollbar-color:var(--ac) transparent}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:8px 10px}
+.card h3{font-size:12px;line-height:1.25}.card small{color:var(--ac2);font-size:10.5px;font-weight:500}.card p{font-size:11px;margin:3px 0 0}
+.card a{color:var(--ac2);font-size:10.5px;font-weight:500;text-decoration:underline}
+
+/* Skills & Terminal */
+.term{font:11.5px 'JetBrains Mono',monospace;background:var(--term-bg);border:1px solid var(--bd);border-radius:8px;padding:7px 9px;height:calc(100% - 74px);display:flex;flex-direction:column;cursor:text}
+.tout{flex:1;overflow:auto;color:var(--term-tx);scrollbar-width:none}.tout div{white-space:pre-wrap;margin-bottom:2px}.tout u{color:var(--ac2)}
+.ti{display:flex;gap:6px;color:var(--ac2)}.ti input{flex:1;background:none;border:0;color:#fff;font:inherit;outline:0}
+.chips{display:flex;flex-wrap:wrap;margin-bottom:6px}
+.chips .tag{font-size:10.5px;padding:2px 8px;transition:.2s;cursor:pointer}.chips .tag:hover{transform:translateY(-2px);background:var(--ac);color:#fff}
+
+.close{position:fixed;top:18px;right:18px;z-index:60;display:none;background:#1f1417;color:#f6eff0;border:1px solid var(--bd);border-radius:9px;padding:8px 14px;font:500 13px Inter;cursor:pointer}
+body.focus .close{display:block}.close:hover,.close:focus-visible{background:var(--ac);outline:0}
+.hint{position:fixed;top:14px;left:0;right:0;text-align:center;color:#9e8489;font-size:11px;letter-spacing:.06em;z-index:5;pointer-events:none}
+
+/* ===== CENTER PERSON & DESK (No arch highlight, no line over monitors, behind focus preview) ===== */
+.me{position:fixed;left:50%;bottom:-1vh;transform:translateX(-50%);width:clamp(225px,26vw,396px);z-index:30;pointer-events:none;transition:opacity .5s}
+.desk{position:fixed;left:0;right:0;bottom:0;height:16vh;z-index:1;pointer-events:none;background:linear-gradient(to bottom,transparent 0%,#070506 90%);transition:opacity .5s}
+.haze{position:fixed;inset:0;z-index:1;pointer-events:none;transition:opacity .5s;background:radial-gradient(75% 65% at 50% 46%,transparent 60%,rgba(6,4,5,.65))}
+body.focus .world{z-index:45}
+body.focus .me{z-index:1;opacity:.12}
+body.focus .haze,body.focus .desk,body.focus .room-lamp,body.focus .room-cone,body.focus .room-ambient{opacity:.14}
+
+/* mobile / tablet stack */
+.stack .stage{position:relative;perspective:none;overflow:visible;padding:44px 14px 30px;min-height:100%}
+.stack .world{position:static;perspective:none;transform:none;width:auto;height:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:20px;max-width:1000px;margin:auto}
+.stack .world>.mon.main{grid-column:1/-1}
+.stack .mon{position:relative;left:auto;top:auto;margin:0;width:100%;height:auto;transform:perspective(900px) rotateX(5deg)!important}
+.stack .rotor,.stack .fr{position:relative;inset:auto;opacity:1!important;transform:none!important}.stack .panel{height:auto;min-height:230px}.stack .scroll,.stack .term,.stack .cards{height:260px}.stack .car{height:320px}
+.stack .glow,.stack .arms,.stack .strips,.stack .dim,.stack .ring,.stack .bgp,.stack .me,.stack .desk,.stack .spot,.stack .room-lamp,.stack .room-cone,.stack .handle{display:none}
+.stack .rotctl{bottom:2px;width:44px;height:30px;right:30px}
+.stack .pg{grid-template-columns:1fr;justify-items:center;text-align:center;height:auto}.stack .hint{position:absolute}
+@media(prefers-reduced-motion:reduce){.mon,.arm-holder,.spot,.track{transition:opacity .2s!important}}
+</style></head><body>
+<div class="hint" id="hint">Click a monitor to preview · Esc to close · Rotate main screen with chin button</div>
+<button class="close" id="close">Close ✕</button>
+<main class="stage" id="stage"><div class="room-lamp" aria-hidden="true"></div><div class="room-cone" aria-hidden="true"></div><div class="room-ambient" aria-hidden="true"></div><div class="arms" id="arms"></div><div class="world" id="world"></div></main>
+<div class="haze"></div><div class="desk"></div>
+<svg class="me" viewBox="0 0 400 430" role="img" aria-label="Developer wearing headphones, seen from behind, seated at a desk">
+<defs><linearGradient id="hd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22171a"/><stop offset="1" stop-color="#120c0e"/></linearGradient></defs>
+<rect x="62" y="150" width="276" height="270" rx="46" fill="#151012"/>
+<path d="M40 430C40 310 90 252 200 244C310 252 360 310 360 430Z" fill="url(#hd)"/>
+<ellipse cx="200" cy="232" rx="78" ry="30" fill="#1e1417"/>
+<circle cx="200" cy="168" r="54" fill="#100c0d"/><path d="M148 168a52 52 0 0 1 104 0" fill="none" stroke="#302125" stroke-width="9"/>
+<rect x="136" y="158" width="18" height="38" rx="8" fill="#261a1e"/><rect x="246" y="158" width="18" height="38" rx="8" fill="#261a1e"/>
+<path d="M110 430C100 380 120 340 160 336M290 430C300 380 280 340 240 336" fill="none" stroke="#181113" stroke-width="34" stroke-linecap="round"/>
+<rect x="90" y="396" width="220" height="18" rx="5" fill="#0d090a"/><rect x="330" y="372" width="26" height="28" rx="5" fill="#1e1417"/>
 </svg>
-
-<a class="skip-link" href="#content">Skip to content</a>
-<div class="spotlight" aria-hidden="true"></div>
-
-<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-  <svg class="icon-burger" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-  <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-</button>
-
-<div class="page">
-
-  <!-- ============ Sidebar ============ -->
-  <header class="sidebar">
-    <div>
-      <h1><a href="#about">Imanuel M.T. Manullang</a></h1>
-      <p class="role">Penetration Tester</p>
-      <p class="tagline">I find security flaws in web applications before attackers do, and write clear reports that help teams fix them.</p>
-
-      <nav class="nav" aria-label="Sections">
-        <ul>
-          <li><a class="nav-link active" href="#about"><span class="nav-indicator"></span><span class="nav-text">About</span></a></li>
-          <li><a class="nav-link" href="#experience"><span class="nav-indicator"></span><span class="nav-text">Experience</span></a></li>
-          <li><a class="nav-link" href="#projects"><span class="nav-indicator"></span><span class="nav-text">Projects</span></a></li>
-          <li><a class="nav-link" href="#certificates"><span class="nav-indicator"></span><span class="nav-text">Certificates &amp; Training</span></a></li>
-          <li><a class="nav-link" href="#achievements"><span class="nav-indicator"></span><span class="nav-text">Achievements</span></a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <ul class="socials" aria-label="Social">
-      <li>
-        <a href="https://github.com/welmnlg" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)" title="GitHub">
-          <svg aria-hidden="true"><use href="#i-github"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://id.linkedin.com/in/imanuelmnllg" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
-          <svg aria-hidden="true"><use href="#i-linkedin"/></svg>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:imanuelmtm@gmail.com" aria-label="Email imanuelmtm@gmail.com" title="imanuelmtm@gmail.com">
-          <svg aria-hidden="true"><use href="#i-mail"/></svg>
-        </a>
-      </li>
-    </ul>
-  </header>
-
-  <!-- ============ Content ============ -->
-  <main class="content" id="content">
-
-    <!-- About -->
-    <section id="about" class="about" aria-label="About">
-      <h2 class="section-title">About</h2>
-      <p>
-        I'm an Information Technology student at Universitas Sumatera Utara (GPA 3.85 / 4.00) focused on
-        application security. I find and validate vulnerabilities through penetration testing projects,
-        Capture the Flag competitions, and security labs, using tools like Burp Suite, Wireshark, Ghidra,
-        GDB, Python, and Linux.
-      </p>
-      <p>
-        I also build what I test. As the backend engineer of the
-        <a class="inline-link" href="http://itlgcloud.my.id/" target="_blank" rel="noopener noreferrer">ITLG Lab Management System</a>,
-        I secured its APIs with JWT authentication and role-based access control, which taught me to look at an
-        application from both sides: as the attacker searching for a way in, and as the developer who wrote it.
-      </p>
-      <p>
-        I'm certified in Google Cybersecurity and Cisco Ethical Hacker. Outside of pentesting I teach, as a
-        laboratory teaching assistant and a coding instructor, and recently gave a talk on reverse engineering
-        and binary analysis at GDG on Campus USU. If you'd like to work together, my inbox is open at
-        <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.
-      </p>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" aria-label="Experience">
-      <h2 class="section-title">Experience</h2>
-      <ol>
-        <li class="entry">
-          <p class="entry-date">Jul 2025 &ndash; Jul 2026</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Coding Instructor <span class="sep">&middot;</span> UOB My Digital Space</h3>
-            <p class="entry-desc">
-              Delivered a year-long coding curriculum for the Ruang Guru x UOB program: Scratch Jr for
-              elementary students and Python for senior high students, reaching 120 students across 4 partner
-              schools and completing all 48 planned sessions on schedule. Mentored 43 students to the semifinal
-              and 3 to the final round of the UOB My Digital Space Codefest 2026, a national coding competition.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>Python</li><li>Scratch Jr</li><li>Teaching</li><li>Mentoring</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Jun 2026</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Cybersecurity Speaker <span class="sep">&middot;</span> Google Developer Groups on Campus USU</h3>
-            <p class="entry-desc">
-              Delivered a hands-on session on Reverse Engineering &amp; Binary Analysis to 70+ participants,
-              covering assembly, static and dynamic analysis, disassembly, and buffer overflow fundamentals with
-              Ghidra and GDB. Designed a custom TryHackMe room with CTF-style challenges so participants could
-              practice binary analysis, debugging, and basic exploitation.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>Ghidra</li><li>GDB</li><li>Reverse Engineering</li><li>TryHackMe</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Feb &ndash; Jun 2026</p>
-          <div class="entry-body">
-            <h3 class="entry-title">
-              Freelance WordPress Developer <span class="sep">&middot;</span>
-              <a href="https://azerothpm.com" target="_blank" rel="noopener noreferrer">Azeroth Property Management<span class="sr-only"> (opens in a new tab)</span></a>
-            </h3>
-            <p class="entry-desc">
-              Designed and built a custom WordPress property management system over four months, from
-              architecture and content structure to deployment. Implemented ACF-based content management and
-              automated listing logic that supports 80+ live property listings, and delivered it to positive
-              client feedback.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>WordPress</li><li>ACF</li><li>PHP</li><li>Client project</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Sep 2023 &ndash; Dec 2025</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Laboratory Teaching Assistant <span class="sep">&middot;</span> IT Laboratory Group, USU</h3>
-            <p class="entry-desc">
-              Instructed practicum sessions across five courses (Web Programming, Data Structures &amp;
-              Algorithms, Data Communications &amp; Computer Networks, Integrative Programming, and Network
-              Design &amp; Administration) for 150+ undergraduate IT students. Guided a Web Programming group to a
-              final project later awarded Top 1 Best Final Project in the IT program (2023/2024), and mentored
-              student groups in implementing redesigned network architectures with Software-Defined Networking.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>Web Programming</li><li>Networking</li><li>SDN</li><li>Mentoring</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Mar &ndash; Jun 2025</p>
-          <div class="entry-body">
-            <h3 class="entry-title">IT Support Intern <span class="sep">&middot;</span> Kanwil Ditjen Perbendaharaan Sumatera Utara</h3>
-            <p class="entry-desc">
-              Provided daily IT support and troubleshooting, and monitored and evaluated ICT infrastructure
-              (Monev). Designed and delivered a phishing-awareness training for 40+ staff, and built a data
-              visualization dashboard while migrating reporting data to Google Sites for faster access.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>IT Support</li><li>Security Awareness</li><li>Data Visualization</li><li>Google Sites</li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Sep &ndash; Dec 2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Committee Chairperson <span class="sep">&middot;</span> Information Technology Christmas Committee, USU</h3>
-            <p class="entry-desc">
-              Led a 67-member committee across two student cohorts and seven divisions, resolving early
-              miscommunication by clarifying roles and encouraging open communication across seniority levels.
-              Revived the annual Christmas event after a one-year hiatus for 200+ attendees and raised over
-              Rp31 million in three months, exceeding the fundraising target.
-            </p>
-            <ul class="tags" aria-label="Skills used">
-              <li>Leadership</li><li>Event management</li><li>Fundraising</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" aria-label="Projects">
-      <h2 class="section-title">Projects</h2>
-      <ul class="project-list">
-
-        <!-- Merdeka Siber pentest report -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Penetration Tester</p>
-              <h3 class="project-title">
-                <a class="project-link" href="https://drive.google.com/file/d/16enmjDkdSbmKZDZFic-MVA8EXvRhiY6D/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  <span>Web Application Penetration Test Report: Merdeka Siber Lab<span class="sr-only"> (opens in a new tab)</span></span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                Penetration test on a simulated web application using Burp Suite (Proxy, Intruder, and Repeater)
-                to identify and document 8 vulnerabilities, including Open Redirect, Username Enumeration, IDOR,
-                and Unrestricted File Upload. Delivered mitigation recommendations based on CVSS 3.1 scoring and
-                OWASP/CWE best practices.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>Burp Suite</li><li>OWASP</li><li>CWE</li><li>CVSS 3.1</li>
-              </ul>
-            </div>
-            <div class="project-media">
-              <img src="images/proj-merdeka-report.avif" alt="Executive summary page of the Merdeka Siber penetration testing report listing security findings and severity levels" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ITLG -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Backend Engineer</p>
-              <h3 class="project-title">
-                <a class="project-link" href="http://itlgcloud.my.id/" target="_blank" rel="noopener noreferrer">
-                  <span>ITLG Lab Management System<span class="sr-only"> (opens in a new tab)</span></span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                Engineered the backend architecture (Laravel, REST APIs) of a laboratory platform, securing the
-                APIs with JWT authentication and role-based access control for Admin, Assistant, and User roles.
-                Built a QR-based attendance and access system with real-time monitoring, and collaborated on
-                database design and deployment with PostgreSQL.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>Laravel</li><li>REST API</li><li>JWT</li><li>PostgreSQL</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/welmnlg/lab_management_system" target="_blank" rel="noopener noreferrer">
-                  GitHub <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
-                </a>
-              </div>
-            </div>
-            <div class="project-media">
-              <img src="images/proj-itlg-dashboard.avif" alt="ITLG Lab Management System dashboard showing four lab room statuses and a weekly schedule table" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- ERP prototype -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Business Analyst &amp; Prototype Designer</p>
-              <h3 class="project-title">
-                <a class="project-link" href="https://figma.com/design/YYNlt8YzztwNar942dcp1G/ESD" target="_blank" rel="noopener noreferrer">
-                  <span>ERP Prototype: Toko Aini Seragam Sekolah<span class="sr-only"> (opens in a new tab)</span></span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                Analyzed sales, inventory, finance, and HR processes at a 15-year manual uniform retailer, then
-                prototyped Inventory, Admin, and Employee modules with real-time stock sync and role-based
-                access. Final grade: B+.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>Figma</li><li>Business analysis</li><li>ERP design</li>
-              </ul>
-            </div>
-            <div class="project-media">
-              <img src="images/cover-erp.avif" alt="Cover graphic for the ERP system prototype for Toko Aini Seragam Sekolah" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- Go Campus -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Backend Developer</p>
-              <h3 class="project-title">
-                <a class="project-link" href="projects/gocampus.html">
-                  <span>Go Campus</span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                Semantic web-based search engine for universities across Indonesia, modeled in Protégé with an
-                RDF dataset. Earned an A grade in the Semantic Web course.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>Protégé</li><li>RDF</li><li>Laravel</li><li>PHP</li>
-              </ul>
-            </div>
-            <div class="project-media">
-              <img src="images/proj-gocampus-home.avif" alt="Homepage of the Go Campus semantic web search engine for Indonesian universities" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- AmbiVerse -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Backend Developer</p>
-              <h3 class="project-title">
-                <a class="project-link" href="projects/ambiverse.html">
-                  <span>AmbiVerse</span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                All-in-one learning and tryout platform for high school students preparing for Indonesia's
-                UTBK/SNBT exams. Winner, Best Final Project: HIMATIF x ITLG 2022.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>PHP</li><li>Laravel</li><li>MySQL</li><li>JavaScript</li>
-              </ul>
-              <div class="project-links">
-                <a href="https://github.com/welmnlg/ambiverse" target="_blank" rel="noopener noreferrer">
-                  GitHub <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
-                </a>
-              </div>
-            </div>
-            <div class="project-media">
-              <img src="images/proj-ambiverse-home.avif" alt="Landing page of AmbiVerse, an exam preparation platform for Indonesian university entrance tests" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-        <!-- Pandhu -->
-        <li class="project-item">
-          <div class="project-card">
-            <div class="project-body">
-              <p class="project-role">Fullstack Developer</p>
-              <h3 class="project-title">
-                <a class="project-link" href="projects/pandhu.html">
-                  <span>Pandhu: Trip Helper</span>
-                  <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-                </a>
-              </h3>
-              <p class="project-desc">
-                TripAdvisor-inspired travel discovery platform with a full CMS for attractions, hotels, and
-                restaurants, built front-to-back with validated CRUD routes.
-              </p>
-              <ul class="tags" aria-label="Tools used">
-                <li>Laravel</li><li>MySQL</li><li>Tailwind</li><li>Bootstrap</li>
-              </ul>
-            </div>
-            <div class="project-media">
-              <img src="images/proj-pandhu-home.avif" alt="Landing page of Pandhu, a travel discovery platform inspired by TripAdvisor" loading="lazy" />
-            </div>
-          </div>
-        </li>
-
-      </ul>
-    </section>
-
-    <!-- Certificates & Training -->
-    <section id="certificates" aria-label="Certificates and training">
-      <h2 class="section-title">Certificates &amp; Training</h2>
-      <ol>
-        <li class="entry">
-          <p class="entry-date">2026</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Google Cybersecurity Certificate <span class="sep">&middot;</span> Coursera</h3>
-            <p class="entry-desc">
-              Nine-course professional certificate covering networks, SIEM tools, Python, Linux, and SQL for
-              entry-level cybersecurity roles.
-            </p>
-            <a class="entry-link" href="https://coursera.org/account/accomplishments/specialization/C41JAGXEO7JL" target="_blank" rel="noopener noreferrer">
-              View credential <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg><span class="sr-only">(opens in a new tab)</span>
-            </a>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Sep 2025</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Cyber Sentinel Secure <span class="sep">&middot;</span> X-code</h3>
-            <p class="entry-desc">Hands-on cybersecurity training program by X-code, PT. Teknologi Server Indonesia.</p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Dec 2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Ethical Hacker <span class="sep">&middot;</span> Cisco Networking Academy</h3>
-            <p class="entry-desc">
-              Penetration testing methodology, vulnerability exploitation across web, cloud, mobile, and IoT,
-              and post-exploitation reporting.
-            </p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Aug &ndash; Sep 2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Security Manpower Training Program (SMTP) Indonesia <span class="sep">&middot;</span> KISIA &amp; NSHC</h3>
-            <p class="entry-desc">30-hour security training program, 12 Aug to 6 Sep 2024.</p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">Apr 2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">NDG Linux Essentials <span class="sep">&middot;</span> Cisco Networking Academy</h3>
-            <p class="entry-desc">Linux fundamentals course.</p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">&mdash;</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Android Application Security Fundamentals <span class="sep">&middot;</span> Mobile Hacking Lab</h3>
-            <p class="entry-desc">Training on the fundamentals of Android application security.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" aria-label="Achievements">
-      <h2 class="section-title">Achievements</h2>
-      <ol>
-        <li class="entry">
-          <p class="entry-date">2025</p>
-          <div class="entry-body">
-            <h3 class="entry-title">3rd Place <span class="sep">&middot;</span> Hackathon Siber Tangguh Bangsa Merdeka, Fakultas Vokasi USU</h3>
-            <p class="entry-desc">
-              Solved 30 web exploitation challenges as part of team "Hengker Pesbuk" in a regional Capture the
-              Flag (CTF) hackathon.
-            </p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">Awardee <span class="sep">&middot;</span> Bakti BCA Scholarship, PT Bank Central Asia Tbk</h3>
-            <p class="entry-desc">
-              Selected from over 1,000 applicants; received educational funding and a one-year self-development
-              program.
-            </p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">2024</p>
-          <div class="entry-body">
-            <h3 class="entry-title">1st Place <span class="sep">&middot;</span> University Business Impact Plan Competition, BCA</h3>
-            <p class="entry-desc">
-              Assisted the MSME product "Inaklin" in driving sales growth and product awareness.
-            </p>
-          </div>
-        </li>
-
-        <li class="entry">
-          <p class="entry-date">2022</p>
-          <div class="entry-body">
-            <h3 class="entry-title">1st Winner, Best Web Programming Final Project <span class="sep">&middot;</span> HIMATIF x ITLG Mini Competition</h3>
-            <p class="entry-desc">
-              Recognized as the best web programming project among peers in the same cohort, for AmbiVerse.
-            </p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <footer class="footer">
-      <p>
-        Want to talk about penetration testing, backend development, or your next project? Send a message to
-        <a class="inline-link" href="mailto:imanuelmtm@gmail.com">imanuelmtm@gmail.com</a>.
-      </p>
-      <p class="copy">&copy; 2026 Imanuel M.T. Manullang</p>
-    </footer>
-
-  </main>
-
-  <!-- Mobile / tablet nav drawer: opened by the single hamburger button
-       fixed at the top-right of the screen. Hidden entirely on desktop,
-       where the sidebar nav (in the header above) is used instead. Its
-       links share the same .nav-link class as the sidebar nav, so the
-       scroll-spy script below highlights them the same way. -->
-  <div class="mobile-menu-backdrop"></div>
-  <div class="mobile-menu" id="mobileMenu" inert>
-    <nav aria-label="Sections">
-      <ul>
-        <li><a class="nav-link" href="#about"><span class="nav-indicator"></span><span class="nav-text">About</span></a></li>
-        <li><a class="nav-link" href="#experience"><span class="nav-indicator"></span><span class="nav-text">Experience</span></a></li>
-        <li><a class="nav-link" href="#projects"><span class="nav-indicator"></span><span class="nav-text">Projects</span></a></li>
-        <li><a class="nav-link" href="#certificates"><span class="nav-indicator"></span><span class="nav-text">Certificates &amp; Training</span></a></li>
-        <li><a class="nav-link" href="#achievements"><span class="nav-indicator"></span><span class="nav-text">Achievements</span></a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-
 <script>
-/* Scroll spy: highlights the nav item of the section currently being read,
-   whether the user clicked the nav, scrolled, or used the keyboard. */
-(function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
-  var sections = links.map(function (link) {
-    return document.querySelector(link.getAttribute('href'));
+/* ===== THEME STORAGE & DEFAULT CONFIG ===== */
+const DEFAULT_THEME={
+  dark:{
+    '--bg':'#090708','--bg-top':'#1d1115',
+    '--ac':'#c81e32','--ac-hov':'#dc2638','--ac2':'#fb7185','--glow-rgb':'200,30,50',
+    '--tx':'#f6eff0','--mu':'#b8a3a7','--pn':'#120e10','--pn2':'#1b1316',
+    '--cd':'#1a1215','--bd':'#312025','--tag-bg':'#2e151c','--tag-tx':'#fecdd3',
+    '--btn-g':'#261a1e','--btn-gt':'#f3dce0','--tl-bd':'#3a2229','--term-bg':'#0b0809','--term-tx':'#f2d5da'
+  },
+  light:{
+    '--tx':'#1c1214','--mu':'#664f54','--pn':'#faf5f6','--pn2':'#f2e8ea',
+    '--cd':'#ffffff','--bd':'#e5d4d8','--tag-bg':'#ffe4e8','--tag-tx':'#9f1239',
+    '--ac2':'#be123c','--btn-g':'#ece0e3','--btn-gt':'#2e181d','--tl-bd':'#dfc8cd','--term-bg':'#161012','--term-tx':'#f5dce0'
+  }
+};
+let THEME=JSON.parse(JSON.stringify(DEFAULT_THEME));
+try{
+  const saved=localStorage.getItem('im_portfolio_theme_v1');
+  if(saved){const parsed=JSON.parse(saved);if(parsed&&parsed.dark&&parsed.light)THEME=parsed}
+}catch(e){}
+
+function hexToRgbStr(hex){
+  const m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex||'');
+  return m?`${parseInt(m[1],16)},${parseInt(m[2],16)},${parseInt(m[3],16)}`:'200,30,50';
+}
+function buildThemeCss(t){
+  t.dark['--glow-rgb']=hexToRgbStr(t.dark['--ac']);
+  const dVars=Object.entries(t.dark).map(([k,v])=>`${k}:${v}`).join(';');
+  const lVars=Object.entries(t.light).map(([k,v])=>`${k}:${v}`).join(';');
+  return `:root{--persp:1700px;--cam:12;--g:.22;${dVars};--sh-top:rgba(255,255,255,.06);--sh-vig:rgba(0,0,0,.38)}\nbody.screen-light{${lVars};--sh-top:rgba(255,255,255,.45);--sh-vig:rgba(40,15,22,.08)}`;
+}
+function applyTheme(t,rebuildStrips=false){
+  const el=document.getElementById('theme-style');
+  if(el)el.textContent=buildThemeCss(t);
+  const wg=document.getElementById('wg');
+  if(wg)wg.style.background=`radial-gradient(55% 50% at 50% 50%,rgba(${t.dark['--glow-rgb']},.22),transparent 70%)`;
+  if(rebuildStrips&&typeof renderAll==='function')renderAll();
+}
+applyTheme(THEME,false);
+
+/* ===== BILINGUAL CV & PORTFOLIO DATA (Imanuel M.T. Manullang) ===== */
+const ASSET_PREFIX=window.__ASSET_PREFIX||'';
+const I18N={
+  en:{
+    hint:'Click a monitor to preview · Esc to close · Rotate main screen with chin button',
+    close:'Close ✕',
+    based:'Based in',
+    dlCv:'⬇ Download CV',
+    viewCred:'View credential ↗',
+    liveDemo:'Live / Report ↗',
+    repo:'GitHub Repo ↗',
+    back:'‹ Back',
+    termInit:'type <u>help</u> to begin (try: whoami, skills, edu, contact)',
+    names:{main:'Profile',projects:'Projects',exp:'Work Experience',certs:'Certifications & Training',ach:'Achievements',interests:'Skills & Terminal',community:'Leadership & Education'},
+    profile:{
+      name:'Imanuel M.T. Manullang',ini:'IM',
+      role:'Penetration Tester · Backend & Security Engineer',
+      sum:'Information Technology student at Universitas Sumatera Utara (GPA 3.85/4.00) focused on web application security, vulnerability assessment, and secure backend engineering. Certified in Google Cybersecurity & Cisco Ethical Hacker.',
+      loc:'Medan, Indonesia · imanuelmtm@gmail.com',
+      facts:[['3.85','GPA / 4.00 at USU'],['6+','Security & Web Projects'],['6','Security Certifications']]
+    },
+    projects:[
+      {t:'Merdeka Siber Lab Pentest Report',role:'Penetration Tester',img:'images/proj-merdeka-report.avif',shots:['images/proj-merdeka-report.avif'],tags:['Burp Suite','OWASP','CWE','CVSS 3.1'],url:'https://drive.google.com/file/d/16enmjDkdSbmKZDZFic-MVA8EXvRhiY6D/view?usp=sharing',repo:'',d:'Web application penetration test identifying 8 vulnerabilities with CVSS 3.1 scoring.',long:'Conducted penetration testing on a simulated web application using Burp Suite (Proxy, Intruder, Repeater) to identify and document 8 vulnerabilities including Open Redirect, Username Enumeration, IDOR, and Unrestricted File Upload. Delivered technical mitigation recommendations based on CVSS 3.1 and OWASP/CWE.'},
+      {t:'ITLG Lab Management System',role:'Backend Engineer',img:'images/proj-itlg-dashboard.avif',shots:['images/proj-itlg-dashboard.avif','images/proj-itlg-login.avif'],tags:['Laravel','REST API','JWT','PostgreSQL'],url:'http://itlgcloud.my.id/',repo:'https://github.com/welmnlg/lab_management_system',d:'Secured laboratory backend platform with JWT auth, RBAC, and QR attendance.',long:'Engineered the backend architecture (Laravel, REST APIs) of a laboratory platform, securing APIs with JWT authentication and role-based access control (Admin, Assistant, User). Built a QR-based attendance and access system with real-time monitoring on PostgreSQL.'},
+      {t:'ERP Prototype: Toko Aini',role:'Business Analyst & Designer',img:'images/cover-erp.avif',shots:['images/cover-erp.avif'],tags:['Figma','Business Analysis','ERP Design'],url:'https://figma.com/design/YYNlt8YzztwNar942dcp1G/ESD',repo:'',d:'End-to-end ERP prototype for inventory, sales, finance, and HR modules.',long:'Analyzed sales, inventory, finance, and HR processes at a 15-year manual uniform retailer, then prototyped Inventory, Admin, and Employee ERP modules with real-time stock synchronization and role-based access control.'},
+      {t:'Go Campus – Semantic Search',role:'Backend Developer',img:'images/proj-gocampus-home.avif',shots:['images/proj-gocampus-home.avif','images/proj-gocampus-protege.avif'],tags:['Protégé','RDF','Laravel','PHP'],url:'',repo:'',d:'Semantic web search engine for Indonesian universities modeled in Protégé & RDF.',long:'Built a semantic web-based search engine for universities across Indonesia, modeled in Protégé with a structured RDF dataset to deliver high-precision campus search results. Earned an A grade in the Semantic Web course.'},
+      {t:'AmbiVerse – UTBK Platform',role:'Backend Developer',img:'images/proj-ambiverse-home.avif',shots:['images/proj-ambiverse-home.avif','images/proj-ambiverse-admin.avif'],tags:['PHP','Laravel','MySQL','JavaScript'],url:'',repo:'https://github.com/welmnlg/ambiverse',d:'All-in-one UTBK/SNBT exam prep platform. Winner, 1st Best Final Project.',long:'Developed core backend features and question package CRUD systems for high school students preparing for Indonesia\'s UTBK/SNBT entrance exams. Winner of 1st Best Final Project at HIMATIF x ITLG Mini Competition 2022.'},
+      {t:'Pandhu: Trip Helper',role:'Fullstack Developer',img:'images/proj-pandhu-home.avif',shots:['images/proj-pandhu-home.avif','images/proj-pandhu-admin.avif'],tags:['Laravel','MySQL','Tailwind','Bootstrap'],url:'',repo:'',d:'TripAdvisor-inspired travel discovery platform with full CMS & CRUD.',long:'Built a centralized travel discovery platform with a custom admin panel and full CMS for managing attractions, accommodations, and restaurants with validated Laravel CRUD routes.'}
+    ],
+    experience:[
+      {co:'UOB My Digital Space (Ruangguru x UOB)',role:'Coding Instructor',period:'Jul 2025 – Jul 2026',txt:'Taught Scratch Jr & Python to 120 students across 4 partner schools (48 sessions). Mentored 43 semifinalists and 3 national finalists in UOB Codefest 2026.'},
+      {co:'Azeroth Property Management',role:'Freelance WordPress Developer',period:'Feb – Jun 2026',txt:'Built and deployed a custom WordPress & ACF property management platform supporting 80+ live property listings (azerothpm.com).'},
+      {co:'Kanwil Ditjen Perbendaharaan Sumatera Utara',role:'IT Support Intern',period:'Mar – Jun 2025',txt:'Provided daily ICT troubleshooting & Monev, delivered phishing-awareness training to 40+ staff, and built a Google Sites reporting dashboard.'},
+      {co:'IT Laboratory Group (ITLG), USU',role:'Laboratory Teaching Assistant',period:'Sep 2023 – Dec 2025',txt:'Instructed 5 IT practicum courses for 150+ students, guided the Top 1 Best Final Project group, and mentored SDN network implementations.'}
+    ],
+    certs:[
+      {n:'Google Cybersecurity Certificate',i:'Coursera',y:'2026',u:'https://coursera.org/account/accomplishments/specialization/C41JAGXEO7JL'},
+      {n:'Ethical Hacker',i:'Cisco Networking Academy',y:'Dec 2024',u:''},
+      {n:'Cyber Sentinel Secure',i:'X-code Indonesia',y:'Sep 2025',u:''},
+      {n:'Security Manpower Training (SMTP)',i:'KISIA & NSHC',y:'Sep 2024',u:''},
+      {n:'NDG Linux Essentials',i:'Cisco Networking Academy',y:'Apr 2024',u:''},
+      {n:'Android App Security Fundamentals',i:'Mobile Hacking Lab',y:'2024',u:''}
+    ],
+    ach:[
+      {t:'3rd Place · CTF Hackathon',y:'2025',d:'Hackathon Siber Tangguh Bangsa Merdeka (Vokasi USU) – solved 30 web exploitation challenges.'},
+      {t:'Bakti BCA Scholarship Awardee',y:'2024',d:'Selected from 1,000+ applicants by PT Bank Central Asia Tbk for funding & development.'},
+      {t:'1st Place · Business Impact Plan',y:'2024',d:'BCA University Competition – drove sales growth & awareness for MSME "Inaklin".'},
+      {t:'1st Winner · Best Final Project',y:'2022',d:'HIMATIF x ITLG Competition – best web programming project for AmbiVerse.'}
+    ],
+    community:[
+      {n:'Cybersecurity Speaker · GDG on Campus USU',d:'Jun 2026 · Reverse Engineering & Binary Analysis (Ghidra, GDB, TryHackMe) for 70+ attendees.'},
+      {n:'Chairperson · IT Christmas Committee USU',d:'Sep–Dec 2024 · Led 67 members across 7 divisions for 200+ attendees; raised Rp31M+.'},
+      {n:'Universitas Sumatera Utara (USU)',d:'2022–Present · Bachelor of Information Technology (GPA 3.85 / 4.00).'}
+    ],
+    interests:['Burp Suite','Ghidra & GDB','Web Pentesting','Laravel & JWT','Python & Linux','Wireshark & SDN']
+  },
+  id:{
+    hint:'Klik monitor untuk preview · Esc untuk tutup · Putar layar utama dengan tombol di bawah monitor',
+    close:'Tutup ✕',
+    based:'Domisili',
+    dlCv:'⬇ Unduh CV',
+    viewCred:'Lihat kredensial ↗',
+    liveDemo:'Buka Proyek / Laporan ↗',
+    repo:'Repositori GitHub ↗',
+    back:'‹ Kembali',
+    termInit:'ketik <u>help</u> untuk mulai (coba: whoami, skills, edu, contact)',
+    names:{main:'Profil',projects:'Proyek',exp:'Pengalaman Kerja',certs:'Sertifikasi & Pelatihan',ach:'Pencapaian',interests:'Keahlian & Terminal',community:'Organisasi & Pendidikan'},
+    profile:{
+      name:'Imanuel M.T. Manullang',ini:'IM',
+      role:'Penetration Tester · Backend & Security Engineer',
+      sum:'Mahasiswa Teknologi Informasi Universitas Sumatera Utara (IPK 3.85/4.00) dengan fokus pada keamanan aplikasi web, pengujian penetrasi, dan rekayasa backend. Tersertifikasi Google Cybersecurity & Cisco Ethical Hacker.',
+      loc:'Medan, Indonesia · imanuelmtm@gmail.com',
+      facts:[['3.85','IPK / 4.00 di USU'],['6+','Proyek Keamanan & Web'],['6','Sertifikasi Keamanan']]
+    },
+    projects:[
+      {t:'Laporan Pentest Web: Merdeka Siber Lab',role:'Penetration Tester',img:'images/proj-merdeka-report.avif',shots:['images/proj-merdeka-report.avif'],tags:['Burp Suite','OWASP','CWE','CVSS 3.1'],url:'https://drive.google.com/file/d/16enmjDkdSbmKZDZFic-MVA8EXvRhiY6D/view?usp=sharing',repo:'',d:'Pengujian penetrasi aplikasi web yang mendokumentasikan 8 celah keamanan (CVSS 3.1).',long:'Melakukan pengujian penetrasi pada aplikasi web simulasi menggunakan Burp Suite (Proxy, Intruder, Repeater) untuk mengidentifikasi 8 kerentanan termasuk Open Redirect, Username Enumeration, IDOR, dan Unrestricted File Upload beserta rekomendasi mitigasi berbasis CVSS 3.1 dan OWASP/CWE.'},
+      {t:'ITLG Lab Management System',role:'Backend Engineer',img:'images/proj-itlg-dashboard.avif',shots:['images/proj-itlg-dashboard.avif','images/proj-itlg-login.avif'],tags:['Laravel','REST API','JWT','PostgreSQL'],url:'http://itlgcloud.my.id/',repo:'https://github.com/welmnlg/lab_management_system',d:'Arsitektur backend laboratorium dengan autentikasi JWT, RBAC, dan presensi QR.',long:'Merancang arsitektur backend (Laravel, REST API) untuk sistem manajemen laboratorium dengan pengamanan JWT dan pembagian hak akses (Admin, Asisten, User), serta sistem presensi QR real-time berbasis PostgreSQL.'},
+      {t:'Prototipe ERP: Toko Aini',role:'Business Analyst & Designer',img:'images/cover-erp.avif',shots:['images/cover-erp.avif'],tags:['Figma','Business Analysis','ERP Design'],url:'https://figma.com/design/YYNlt8YzztwNar942dcp1G/ESD',repo:'',d:'Prototipe sistem ERP untuk modul inventaris, penjualan, keuangan, dan SDM.',long:'Menganalisis proses penjualan, inventaris, keuangan, dan SDM pada toko seragam 15 tahun, lalu merancang prototipe modul Inventaris, Admin, dan Karyawan dengan sinkronisasi stok real-time.'},
+      {t:'Go Campus – Pencarian Semantik',role:'Backend Developer',img:'images/proj-gocampus-home.avif',shots:['images/proj-gocampus-home.avif','images/proj-gocampus-protege.avif'],tags:['Protégé','RDF','Laravel','PHP'],url:'',repo:'',d:'Mesin pencari universitas berbasis web semantik menggunakan Protégé & RDF.',long:'Membangun mesin pencari universitas di seluruh Indonesia berbasis Semantic Web yang dimodelkan di Protégé dengan dataset RDF terstruktur. Meraih nilai A pada mata kuliah Semantic Web.'},
+      {t:'AmbiVerse – Platform UTBK/SNBT',role:'Backend Developer',img:'images/proj-ambiverse-home.avif',shots:['images/proj-ambiverse-home.avif','images/proj-ambiverse-admin.avif'],tags:['PHP','Laravel','MySQL','JavaScript'],url:'',repo:'https://github.com/welmnlg/ambiverse',d:'Platform belajar & tryout UTBK/SNBT. Pemenang Proyek Akhir Terbaik 1.',long:'Mengembangkan fitur backend dan manajemen paket soal tryout untuk siswa SMA yang mempersiapkan ujian masuk PTN UTBK/SNBT. Memenangkan penghargaan Best Final Project di HIMATIF x ITLG 2022.'},
+      {t:'Pandhu: Trip Helper',role:'Fullstack Developer',img:'images/proj-pandhu-home.avif',shots:['images/proj-pandhu-home.avif','images/proj-pandhu-admin.avif'],tags:['Laravel','MySQL','Tailwind','Bootstrap'],url:'',repo:'',d:'Platform eksplorasi wisata terinspirasi TripAdvisor dengan CMS & CRUD lengkap.',long:'Membangun platform direktori wisata terpusat lengkap dengan panel admin dan CMS untuk mengelola destinasi wisata, hotel, dan restoran menggunakan rute CRUD Laravel yang tervalidasi.'}
+    ],
+    experience:[
+      {co:'UOB My Digital Space (Ruangguru x UOB)',role:'Coding Instructor',period:'Jul 2025 – Jul 2026',txt:'Mengajar kurikulum Scratch Jr & Python ke 120 siswa di 4 sekolah mitra (48 sesi). Membimbing 43 semifinalis & 3 finalis nasional UOB Codefest 2026.'},
+      {co:'Azeroth Property Management',role:'Freelance WordPress Developer',period:'Feb – Jun 2026',txt:'Merancang dan mendeploy sistem manajemen properti WordPress & ACF yang mendukung 80+ listing properti aktif (azerothpm.com).'},
+      {co:'Kanwil Ditjen Perbendaharaan Sumatera Utara',role:'IT Support Intern',period:'Mar – Jun 2025',txt:'Menangani troubleshooting TIK harian & Monev, membawakan pelatihan kesadaran phishing untuk 40+ staf, dan membangun dashboard Google Sites.'},
+      {co:'IT Laboratory Group (ITLG), USU',role:'Asisten Laboratorium',period:'Sep 2023 – Des 2025',txt:'Mengajar praktikum di 5 mata kuliah TI untuk 150+ mahasiswa, membimbing tim peraih Top 1 Proyek Akhir Terbaik, dan memandu arsitektur jaringan SDN.'}
+    ],
+    certs:[
+      {n:'Google Cybersecurity Certificate',i:'Coursera',y:'2026',u:'https://coursera.org/account/accomplishments/specialization/C41JAGXEO7JL'},
+      {n:'Ethical Hacker',i:'Cisco Networking Academy',y:'Des 2024',u:''},
+      {n:'Cyber Sentinel Secure',i:'X-code Indonesia',y:'Sep 2025',u:''},
+      {n:'Security Manpower Training (SMTP)',i:'KISIA & NSHC',y:'Sep 2024',u:''},
+      {n:'NDG Linux Essentials',i:'Cisco Networking Academy',y:'Apr 2024',u:''},
+      {n:'Android App Security Fundamentals',i:'Mobile Hacking Lab',y:'2024',u:''}
+    ],
+    ach:[
+      {t:'Juara 3 · Hackathon CTF Siber',y:'2025',d:'Hackathon Siber Tangguh Bangsa Merdeka (Vokasi USU) – menyelesaikan 30 tantangan web exploitation.'},
+      {t:'Penerima Beasiswa Bakti BCA',y:'2024',d:'Terpilih dari 1.000+ pendaftar oleh PT Bank Central Asia Tbk untuk pendanaan & pengembangan diri.'},
+      {t:'Juara 1 · Business Impact Plan',y:'2024',d:'Kompetisi BCA – mendorong pertumbuhan penjualan & kesadaran produk UMKM "Inaklin".'},
+      {t:'Juara 1 · Proyek Akhir Web Terbaik',y:'2022',d:'Kompetisi Mini HIMATIF x ITLG – proyek pemrograman web terbaik untuk AmbiVerse.'}
+    ],
+    community:[
+      {n:'Pembicara Keamanan Siber · GDG USU',d:'Jun 2026 · Sesi Reverse Engineering & Analisis Biner (Ghidra, GDB, TryHackMe) untuk 70+ peserta.'},
+      {n:'Ketua Panitia · Natal TI USU',d:'Sep–Des 2024 · Memimpin 67 panitia di 7 divisi untuk 200+ peserta & menghimpun dana Rp31 juta+.'},
+      {n:'Universitas Sumatera Utara (USU)',d:'2022–Sekarang · S1 Teknologi Informasi (IPK 3.85 / 4.00).'}
+    ],
+    interests:['Burp Suite','Ghidra & GDB','Web Pentesting','Laravel & JWT','Python & Linux','Wireshark & SDN']
+  }
+};
+
+/* ===== CONFIG: tweak here ===== */
+const CFG={cam:12,persp:1700,arc:1250,curveR:1350,glow:.22,rotMs:900,parallax:0};
+const SZ={main:[640,380,1,16],projects:[520,330,1,12],exp:[400,310,1,10],certs:[400,230,0],ach:[400,230,0],interests:[380,230,0],community:[250,230,0]};
+const ZIDX={main:4,projects:3,exp:3,certs:2,ach:2,interests:4,community:6};
+const LAY={
+  land:{main:[0,-110],projects:[-25,-150],exp:[25,-190],certs:[-25,135],ach:[25,100],interests:[-14,205],community:[14,205]},
+  port:{main:[0,-70],projects:[-25.5,-210],exp:[28,-250],certs:[-25.5,30],ach:[28,20],interests:[-17,290],community:[17,290]}
+};
+
+let lang='en',lightMode=false,cur=null,hov=null,portrait=false,stack=false,busy=false,projIdx=0,projPaused=false,projStarted=false;
+const $=s=>document.querySelector(s),world=$('#world'),armsEl=$('#arms'),mons={},arms={};
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+document.documentElement.style.setProperty('--persp',CFG.persp+'px');
+document.documentElement.style.setProperty('--cam',CFG.cam);
+document.documentElement.style.setProperty('--g',CFG.glow);
+
+const L=()=>I18N[lang];
+const dim=id=>id=='main'?(portrait?[380,640]:[640,380]):SZ[id];
+const sc=()=>Math.min(innerWidth/1700,innerHeight/830);
+const tags=a=>a.map(t=>`<i class="tag">${t}</i>`).join('');
+const H=(t,n,extra='')=>`<div class="ph"><span>${t}</span><div class="ph-right">${extra}<b>${n}</b></div></div>`;
+
+const R={
+  main:()=>{
+    const d=L(),P=d.profile;
+    const ctrls=`<button class="tbtn" data-act="theme" title="Toggle screen dark/light mode">${lightMode?'☀️ Light':'🌙 Dark'}</button><button class="tbtn" data-act="lang" title="Switch language">${lang.toUpperCase()}</button>`;
+    return H(d.names.main,'01',ctrls)+`<div class="pg"><div class="av">${P.ini}</div><div><h1>${P.name}</h1><p class="role">${P.role}</p><p class="sum">${P.sum}</p><p class="mu" style="font-size:11.5px">${d.based} ${P.loc}</p><div><a class="btn" href="${ASSET_PREFIX}Imanuel_MT_Manullang_CV.pdf" download="Imanuel_MT_Manullang_CV.pdf">${d.dlCv}</a><a class="btn g" href="https://github.com/welmnlg" target="_blank" rel="noopener">GitHub</a><a class="btn g" href="https://id.linkedin.com/in/imanuelmnllg" target="_blank" rel="noopener">LinkedIn</a><a class="btn g" href="mailto:imanuelmtm@gmail.com">Email</a></div></div><ul class="facts">${P.facts.map(f=>`<li><b>${f[0]}</b>${f[1]}</li>`).join('')}</ul></div>`;
+  },
+  projects:()=>{
+    const d=L();
+    return H(d.names.projects,'02')+`<div class="car"><div class="vp"><div class="track">${d.projects.map((p,i)=>`<div class="slide" data-i="${i}"><div class="th"><img src="${ASSET_PREFIX}${p.img}" alt="${p.t}" loading="lazy"><span class="th-badge">${p.role}</span></div><div class="sb"><h3>${p.t}</h3><p>${p.d}</p><div>${tags(p.tags)}</div></div></div>`).join('')}</div></div><div class="nav"><button class="ar" data-d="-1" aria-label="Previous project">‹</button><span>${d.projects.map((_,idx)=>`<i class="dot ${idx===projIdx?'on':''}" data-i="${idx}"></i>`).join('')}</span><button class="ar" data-d="1" aria-label="Next project">›</button></div></div><div class="detail"></div>`;
+  },
+  exp:()=>{
+    const d=L();
+    return H(d.names.exp,'03')+`<div class="scroll"><div class="tl">${d.experience.map(e=>`<div><h3>${e.role}</h3><small>${e.co} · ${e.period}</small><p>${e.txt}</p></div>`).join('')}</div></div>`;
+  },
+  certs:()=>{
+    const d=L();
+    return H(d.names.certs,'04')+`<div class="cards">${d.certs.map(c=>`<div class="card"><h3>${c.n}</h3><small>${c.i} · ${c.y}</small>${c.u?`<br><a href="${c.u}" target="_blank" rel="noopener">${d.viewCred}</a>`:''}</div>`).join('')}</div>`;
+  },
+  ach:()=>{
+    const d=L();
+    return H(d.names.ach,'05')+`<div class="cards">${d.ach.map(a=>`<div class="card"><h3>${a.t}</h3><small>${a.y}</small><p class="mu">${a.d}</p></div>`).join('')}</div>`;
+  },
+  interests:()=>{
+    const d=L();
+    return H(d.names.interests,'06')+`<div class="chips">${d.interests.map(t=>`<i class="tag" data-t="${t}">${t}</i>`).join('')}</div><div class="term"><div class="tout"><div>${d.termInit}</div></div><label class="ti">$<input aria-label="Terminal command" autocomplete="off" spellcheck="false"></label></div>`;
+  },
+  community:()=>{
+    const d=L();
+    return H(d.names.community,'07')+`<div class="scroll">${d.community.map(c=>`<div class="card" style="margin-bottom:7px"><h3>${c.n}</h3><p class="mu" style="font-size:11px;margin-top:2px">${c.d}</p></div>`).join('')}</div>`;
+  }
+};
+
+const CMD={
+  help:()=>'commands: <u>help whoami skills edu contact ctf clear</u>',
+  whoami:()=>`${L().profile.name} — ${L().profile.role}`,
+  skills:()=>'Pentest: Burp Suite, OWASP/CWE, CVSS 3.1, Ghidra, GDB, Wireshark | Dev: Python, PHP, Laravel, WordPress, JS, C++, SQL, Linux',
+  edu:()=>'Universitas Sumatera Utara (USU) · B.IT (2022–Present) · GPA 3.85/4.00',
+  contact:()=>'Email: imanuelmtm@gmail.com | GitHub: github.com/welmnlg | LinkedIn: in/imanuelmnllg',
+  ctf:()=>'3rd Place Hackathon Siber Tangguh Bangsa Merdeka 2025 (30 web exploitation challenges solved)',
+  interests:()=>L().interests.join(' · ')
+};
+
+/* ===== SCENE INITIALIZATION ===== */
+const bgp=document.createElement('div');bgp.className='bgp';
+bgp.innerHTML=`<div class="bgp" id="wg" style="left:-900px;top:-430px;width:1800px;height:860px;background:radial-gradient(55% 50% at 50% 50%,rgba(${THEME.dark['--glow-rgb']},.22),transparent 70%)"></div>`;
+world.append(bgp);
+
+for(const id in SZ){
+  const ah=document.createElement('div');ah.className='arm-holder';ah.innerHTML='<i class="arm"></i>';armsEl.append(ah);arms[id]=ah;
+  const m=document.createElement('article');m.className='mon'+(SZ[id][2]?' curved ':' ')+id;m.tabIndex=0;m.style.setProperty('--zi',ZIDX[id]||2);
+  m.innerHTML=`<i class="glow"></i><div class="rotor"><div class="fr"><div class="panel"></div><i class="sheen"></i><i class="led"></i><i class="dim"></i></div><div class="strips" aria-hidden="true"></div></div><i class="ring"></i>`+(id=='main'?'<button class="rotctl" aria-label="Rotate monitor between portrait and landscape" title="Rotate">⟳</button><i class="handle" title="Drag to rotate"></i>':'');
+  world.append(m);mons[id]=m;
+  m.addEventListener('mouseenter',()=>{
+    if(stack||cur||busy)return;
+    hov=id;if(id==='main')document.body.classList.add('main-hov');
+    m.style.transform=baseT(id,48);
   });
-  var ticking = false;
+  m.addEventListener('mouseleave',()=>{
+    if(hov===id)hov=null;if(id==='main')document.body.classList.remove('main-hov');
+    if(stack||cur===id)return;
+    m.style.transform=baseT(id,0);
+  });
+  m.addEventListener('focus',()=>{
+    if(stack||cur||busy)return;
+    hov=id;if(id==='main')document.body.classList.add('main-hov');
+    m.style.transform=baseT(id,48);
+  });
+  m.addEventListener('blur',()=>{
+    if(hov===id)hov=null;if(id==='main')document.body.classList.remove('main-hov');
+    if(stack||cur===id)return;
+    m.style.transform=baseT(id,0);
+  });
+  m.addEventListener('click',e=>{
+    if(stack||e.target.closest('a,button,input,label,.dot,.term,.chips .tag,.rotctl,.handle'))return;
+    if(cur&&cur!==id)return close();
+    if(!cur)open(id);
+  });
+  m.addEventListener('keydown',e=>{if(e.target===m&&e.key==='Enter'&&!cur){e.preventDefault();open(id)}});
+}
 
-  function update() {
-    ticking = false;
-    var line = window.innerHeight * 0.3; // reading line, 30% from the top
-    var current = sections[0];
+/* Build 3D curved strips + sync live panel events */
+function build(id){
+  const m=mons[id],ah=arms[id],[w,h]=dim(id),host=m.querySelector('.strips');
+  host.innerHTML='';
+  m.style.setProperty('--w',w);m.style.setProperty('--h',h);
+  ah.style.setProperty('--w',w);ah.style.setProperty('--h',h);
+  if(!SZ[id][2]||stack)return;
+  const N=id=='main'&&portrait?10:SZ[id][3],W=w,Hh=h,sw=W/N,Rr=CFG.curveR,fr=m.querySelector('.rotor>.fr');
+  for(let i=0;i<N;i++){
+    const xc=(i+.5)*sw-W/2,t=xc/Rr,s=document.createElement('div');s.className='st';
+    s.style.cssText=`width:${sw+1.2}px;height:${Hh}px;left:${-sw/2}px;transform:translate3d(${(Rr*Math.sin(t)).toFixed(2)}px,0,${(Rr*(1-Math.cos(t))).toFixed(2)}px) rotateY(${(-t*180/Math.PI).toFixed(2)}deg);`+(i==0?'border-radius:12px 0 0 12px':i==N-1?'border-radius:0 12px 12px 0':'');
+    const f=fr.cloneNode(true);
+    f.style.cssText=`position:absolute;top:0;left:${-i*sw}px;width:${W}px;height:${Hh}px;opacity:1;transform:none;pointer-events:none`;
+    s.append(f);host.append(s);
+  }
+}
 
-    for (var i = 0; i < sections.length; i++) {
-      if (sections[i].getBoundingClientRect().top <= line) current = sections[i];
-    }
-
-    // Short last sections may never reach the reading line
-    var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-    if (atBottom) current = sections[sections.length - 1];
-
-    links.forEach(function (link, i) {
-      var active = sections[i] === current;
-      link.classList.toggle('active', active);
-      if (active) link.setAttribute('aria-current', 'true');
-      else link.removeAttribute('aria-current');
+function wirePanel(id){
+  const m=mons[id],live=m.querySelector('.rotor>.fr');
+  const scEl=live.querySelector('.scroll');
+  if(scEl){
+    scEl.addEventListener('scroll',()=>{
+      const st=scEl.scrollTop;
+      m.querySelectorAll('.strips .scroll').forEach(s=>s.scrollTop=st);
+    },{passive:true});
+  }
+  if(id==='main'){
+    live.querySelectorAll('.tbtn').forEach(b=>b.onclick=e=>{
+      e.stopPropagation();
+      if(b.dataset.act==='theme'){
+        lightMode=!lightMode;
+        document.body.classList.toggle('screen-light',lightMode);
+        renderAll();
+      }else if(b.dataset.act==='lang'){
+        lang=lang==='en'?'id':'en';
+        document.documentElement.lang=lang;
+        $('#hint').textContent=L().hint;
+        $('#close').textContent=L().close;
+        renderAll();
+      }
     });
   }
-
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      window.requestAnimationFrame(update);
-    }
+  if(id==='projects'){
+    const n=L().projects.length;
+    const go=k=>{
+      projIdx=(k+n)%n;
+      m.querySelectorAll('.car').forEach(c=>{
+        c.querySelector('.track').style.transform=`translateX(${-projIdx*100}%)`;
+        c.querySelectorAll('.dot').forEach((d,j)=>d.classList.toggle('on',j===projIdx));
+      });
+    };
+    go(projIdx);
+    live.querySelectorAll('.ar').forEach(b=>b.onclick=e=>{e.stopPropagation();projStarted=true;go(projIdx+ +b.dataset.d)});
+    live.querySelectorAll('.dot').forEach(d=>d.onclick=e=>{e.stopPropagation();projStarted=true;go(+d.dataset.i)});
+    const vp=live.querySelector('.vp');let sx=null;
+    vp.onpointerdown=e=>sx=e.clientX;
+    vp.onpointerup=e=>{
+      if(sx==null)return;
+      const dx=e.clientX-sx;sx=null;
+      if(Math.abs(dx)>40){e.stopPropagation();go(projIdx+(dx<0?1:-1))}
+      else if(cur==='projects'){
+        const p=L().projects[projIdx],d=L();
+        live.querySelector('.detail').innerHTML=`<button class="btn g" id="bk">${d.back}</button><h2 style="font-size:24px;margin-top:8px">${p.t}</h2><p class="role">${p.role}</p><p>${p.long}</p><div>${tags(p.tags)}</div><div class="shots">${p.shots.map(src=>`<img src="${ASSET_PREFIX}${src}" alt="${p.t}">`).join('')}</div>${p.url?`<a class="btn" href="${p.url}" target="_blank" rel="noopener">${d.liveDemo}</a>`:''}${p.repo?`<a class="btn g" href="${p.repo}" target="_blank" rel="noopener">${d.repo}</a>`:''}`;
+        m.classList.add('detail');place();
+        live.querySelector('#bk').onclick=ev=>{ev.stopPropagation();m.classList.remove('detail');place()};
+      }
+    };
   }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  update();
-
-  /* Cursor glow */
-  var root = document.documentElement;
-  window.addEventListener('mousemove', function (e) {
-    root.style.setProperty('--mx', e.clientX + 'px');
-    root.style.setProperty('--my', e.clientY + 'px');
-  }, { passive: true });
-})();
-
-/* Hamburger drawer: opened from the button inside whichever section's
-   sticky title bar is currently on screen (only one is ever visible
-   at a time, since only one section can be "stuck" at once). */
-(function () {
-  var toggles = Array.prototype.slice.call(document.querySelectorAll('.menu-toggle'));
-  var backdrop = document.querySelector('.mobile-menu-backdrop');
-  var menu = document.querySelector('.mobile-menu');
-  if (!menu) return;
-  var menuLinks = Array.prototype.slice.call(menu.querySelectorAll('a'));
-  var lastToggle = null;
-
-  function setExpanded(open) {
-    toggles.forEach(function (b) { b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
-  }
-
-  function openMenu(fromBtn) {
-    lastToggle = fromBtn || toggles[0];
-    document.body.classList.add('menu-open');
-    setExpanded(true);
-    menu.removeAttribute('inert');
-    var first = menu.querySelector('a');
-    if (first) first.focus();
-    document.addEventListener('keydown', onKeydown);
-  }
-
-  function closeMenu() {
-    document.body.classList.remove('menu-open');
-    setExpanded(false);
-    menu.setAttribute('inert', '');
-    document.removeEventListener('keydown', onKeydown);
-    if (lastToggle) lastToggle.focus();
-  }
-
-  function onKeydown(e) {
-    if (e.key === 'Escape') closeMenu();
-  }
-
-  toggles.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (document.body.classList.contains('menu-open')) closeMenu();
-      else openMenu(btn);
+  if(id==='interests'){
+    const inp=live.querySelector('input'),term=live.querySelector('.term');
+    const run=v=>{
+      m.querySelectorAll('.tout').forEach(o=>{
+        if(v==='clear'){o.innerHTML='';return}
+        o.insertAdjacentHTML('beforeend',`<div>$ ${v.replace(/</g,'&lt;')}</div><div>${v?(CMD[v]?CMD[v]():'command not found: try <u>help</u>'):''}</div>`);
+        o.scrollTop=1e5;
+      });
+    };
+    inp.onkeydown=e=>{e.stopPropagation();if(e.key!=='Enter')return;const v=inp.value.trim().toLowerCase();inp.value='';run(v)};
+    term.onclick=e=>{e.stopPropagation();inp.focus()};
+    live.querySelectorAll('.chips .tag').forEach(t=>t.onclick=e=>{
+      e.stopPropagation();
+      m.querySelectorAll('.tout').forEach(o=>{
+        o.insertAdjacentHTML('beforeend',`<div>$ skill --inspect "${t.dataset.t}"</div><div>Verified competency: <u>${t.dataset.t}</u></div>`);
+        o.scrollTop=1e5;
+      });
+      inp.focus();
     });
-  });
+  }
+}
 
-  if (backdrop) backdrop.addEventListener('click', closeMenu);
-  menuLinks.forEach(function (a) { a.addEventListener('click', closeMenu); });
+function renderAll(){
+  for(const id in SZ){
+    const m=mons[id];
+    m.setAttribute('aria-label',L().names[id]+' monitor. Press Enter to focus.');
+    m.querySelector('.rotor>.fr>.panel').innerHTML=R[id]();
+    build(id);
+    wirePanel(id);
+  }
+  place();
+}
+
+function baseT(id,lift=0){
+  const s=sc(),[a,y]=LAY[portrait?'port':'land'][id],r=a*Math.PI/180,x=CFG.arc*Math.sin(r)*s,yv=y*s,z=(CFG.arc*(1-Math.cos(r))+lift)*s,k=s*(lift?1.04:1);
+  return`rotateX(${CFG.cam}deg) translate3d(${x.toFixed(1)}px,${yv.toFixed(1)}px,${z.toFixed(1)}px) rotateY(${-a}deg) rotateX(${-CFG.cam*.5}deg) scale(${k.toFixed(4)})`;
+}
+
+function focusT(id,big){
+  const [w,h]=dim(id),y=Math.round(innerHeight*(.5-.54));
+  const isPortMain=(id==='main'&&portrait);
+  const wRatio=big?.82:isPortMain?.85:.72;
+  const hRatio=big?.82:isPortMain?.88:.70;
+  const k=Math.min(innerWidth*wRatio/w,innerHeight*hRatio/h);
+  return`translate(0px,${y}px) scale(${k.toFixed(4)})`;
+}
+
+function place(){
+  const s=sc();
+  for(const id in SZ){
+    const m=mons[id],ah=arms[id];
+    if(stack){m.style.transform='';ah.style.transform='';continue}
+    ah.style.transform=baseT(id,0);
+    if(cur===id){m.style.transform=focusT(id,m.classList.contains('detail'));continue}
+    m.style.transform=baseT(id,hov===id&&!cur?48:0);
+  }
+  $('#wg').style.transform=`rotateX(${CFG.cam}deg) translate3d(0,${-30*s}px,${-130*s}px) scale(${s})`;
+}
+
+function open(id){cur=id;hov=null;document.body.classList.remove('main-hov');document.body.classList.add('focus');for(const k in mons)mons[k].classList.toggle('focus',k===id);place();mons[id].focus({preventScroll:true})}
+function close(){const m=cur&&mons[cur];cur=null;document.body.classList.remove('focus');for(const k in mons)mons[k].classList.remove('focus','detail');place();if(m)m.focus({preventScroll:true})}
+$('#close').onclick=close;
+$('#stage').addEventListener('click',e=>{if(cur&&!e.target.closest('.mon'))close()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&cur){if(mons[cur].classList.contains('detail')){mons[cur].classList.remove('detail');place()}else close()}});
+
+/* Main monitor rotation */
+function rotate(){
+  if(busy)return;busy=true;
+  const m=mons.main,rot=m.querySelector('.rotor'),to=!portrait,fromDeg=to?90:-90;
+  portrait=to;m.classList.toggle('portrait',to);
+  if(stack||RM){build('main');place();if(stack&&!RM)rot.animate([{transform:'perspective(800px) rotateY(0)'},{transform:'perspective(800px) rotateY(360deg)'}],{duration:700,easing:'ease-in-out'});busy=false;return}
+  m.classList.add('rot-anim');
+  m.style.setProperty('--w',dim('main')[0]);m.style.setProperty('--h',dim('main')[1]);
+  arms.main.style.setProperty('--w',dim('main')[0]);arms.main.style.setProperty('--h',dim('main')[1]);
+  place();
+  const a=rot.animate([{transform:`rotateZ(${fromDeg}deg) scale(.92)`},{transform:'rotateZ(0deg) scale(1)'}],{duration:CFG.rotMs,easing:'cubic-bezier(.22,1,.32,1)'});
+  a.onfinish=()=>{build('main');m.classList.remove('rot-anim');busy=false};
+}
+mons.main.querySelector('.rotctl').onclick=e=>{e.stopPropagation();rotate()};
+{const hd=mons.main.querySelector('.handle');let x0,y0;hd.onpointerdown=e=>{x0=e.clientX;y0=e.clientY;hd.setPointerCapture(e.pointerId);e.stopPropagation()};hd.onpointerup=e=>{if(Math.hypot(e.clientX-x0,e.clientY-y0)>28)rotate()}}
+
+/* Projects auto-advance */
+mons.projects.addEventListener('mouseenter',()=>projPaused=true);
+mons.projects.addEventListener('mouseleave',()=>projPaused=false);
+addEventListener('pointerdown',()=>projStarted=true,{once:true});
+setInterval(()=>{
+  if(projStarted&&!projPaused&&!mons.projects.classList.contains('detail')&&!RM){
+    const n=L().projects.length;
+    projIdx=(projIdx+1)%n;
+    mons.projects.querySelectorAll('.car').forEach(c=>{
+      c.querySelector('.track').style.transform=`translateX(${-projIdx*100}%)`;
+      c.querySelectorAll('.dot').forEach((d,j)=>d.classList.toggle('on',j===projIdx));
+    });
+  }
+},4000);
+
+function layout(){
+  const s=innerWidth<900;stack=s;document.body.classList.toggle('stack',s);
+  if(s&&cur)close();
+  renderAll();
+}
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(layout,120)});
+layout();
+
+/* ===== SECRET CUSTOMIZER ACTIVATION CHECK (Obfuscated hash check) ===== */
+(function(){
+  const h=s=>[...s].reduce((a,c)=>Math.imul(31,a)+c.charCodeAt(0)|0,0);
+  const segs=[location.pathname,location.hash,location.search].join('/').toLowerCase().split(/[\/?#&=]+/).filter(Boolean);
+  if(window.__STUDIO_MODE||segs.some(x=>h(x)===-874013782)){
+    initSecretStudio();
+  }
 })();
-</script>
 
-</body>
-</html>
+function initSecretStudio(){
+  const PRESETS={
+    crimson:{
+      name:'Cardinal Crimson (Default)',
+      dark:{'--bg':'#090708','--bg-top':'#1d1115','--ac':'#c81e32','--ac-hov':'#dc2638','--ac2':'#fb7185','--tx':'#f6eff0','--mu':'#b8a3a7','--pn':'#120e10','--pn2':'#1b1316','--cd':'#1a1215','--bd':'#312025','--tag-bg':'#2e151c','--tag-tx':'#fecdd3','--btn-g':'#261a1e','--btn-gt':'#f3dce0','--tl-bd':'#3a2229','--term-bg':'#0b0809','--term-tx':'#f2d5da'},
+      light:{'--tx':'#1c1214','--mu':'#664f54','--pn':'#faf5f6','--pn2':'#f2e8ea','--cd':'#ffffff','--bd':'#e5d4d8','--tag-bg':'#ffe4e8','--tag-tx':'#9f1239','--ac2':'#be123c','--btn-g':'#ece0e3','--btn-gt':'#2e181d','--tl-bd':'#dfc8cd','--term-bg':'#161012','--term-tx':'#f5dce0'}
+    },
+    violet:{
+      name:'Royal Violet',
+      dark:{'--bg':'#0b0d12','--bg-top':'#181b26','--ac':'#8b5cf6','--ac-hov':'#7c3aed','--ac2':'#a78bfa','--tx':'#e8e8f2','--mu':'#a3a6b8','--pn':'#0f1018','--pn2':'#171828','--cd':'#161727','--bd':'#25263a','--tag-bg':'#22204a','--tag-tx':'#c9bdfc','--btn-g':'#24253a','--btn-gt':'#d7d0ff','--tl-bd':'#2d2e48','--term-bg':'#0a0b12','--term-tx':'#cfc9f3'},
+      light:{'--tx':'#141424','--mu':'#52546a','--pn':'#f6f6fb','--pn2':'#ecebfa','--cd':'#ffffff','--bd':'#dcdaf0','--tag-bg':'#ede9fe','--tag-tx':'#5b21b6','--ac2':'#6d28d9','--btn-g':'#e5e3f5','--btn-gt':'#231f42','--tl-bd':'#d0cde8','--term-bg':'#11121d','--term-tx':'#dcd7fe'}
+    },
+    emerald:{
+      name:'Cyber Emerald',
+      dark:{'--bg':'#060b09','--bg-top':'#0e1f18','--ac':'#059669','--ac-hov':'#10b981','--ac2':'#34d399','--tx':'#ecfdf5','--mu':'#9caea6','--pn':'#0b1310','--pn2':'#11201a','--cd':'#111c17','--bd':'#1f352b','--tag-bg':'#132e23','--tag-tx':'#a7f3d0','--btn-g':'#172921','--btn-gt':'#d1fae5','--tl-bd':'#1f3a2e','--term-bg':'#060a08','--term-tx':'#a7f3d0'},
+      light:{'--tx':'#0c1914','--mu':'#465e54','--pn':'#f4fbf7','--pn2':'#e6f5ed','--cd':'#ffffff','--bd':'#cce3d7','--tag-bg':'#d1fae5','--tag-tx':'#065f46','--ac2':'#047857','--btn-g':'#dff0e7','--btn-gt':'#0f291e','--tl-bd':'#bcd9ca','--term-bg':'#0c1713','--term-tx':'#d1fae5'}
+    },
+    cobalt:{
+      name:'Cobalt Security Blue',
+      dark:{'--bg':'#070a10','--bg-top':'#101a2b','--ac':'#2563eb','--ac-hov':'#3b82f6','--ac2':'#60a5fa','--tx':'#f0f5ff','--mu':'#9ba8bf','--pn':'#0c111b','--pn2':'#131c2e','--cd':'#131a29','--bd':'#22304a','--tag-bg':'#172542','--tag-tx':'#bfdbfe','--btn-g':'#1b263b','--btn-gt':'#dbeafe','--tl-bd':'#243552','--term-bg':'#080b12','--term-tx':'#bfdbfe'},
+      light:{'--tx':'#0f172a','--mu':'#475569','--pn':'#f5f8ff','--pn2':'#e8f0fe','--cd':'#ffffff','--bd':'#d2deef','--tag-bg':'#dbeafe','--tag-tx':'#1e40af','--ac2':'#1d4ed8','--btn-g':'#e2e8f0','--btn-gt':'#1e293b','--tl-bd':'#cbd5e1','--term-bg':'#0f172a','--term-tx':'#dbeafe'}
+    },
+    amber:{
+      name:'Amber Tactical Gold',
+      dark:{'--bg':'#0a0806','--bg-top':'#1f170d','--ac':'#d97706','--ac-hov':'#f59e0b','--ac2':'#fbbf24','--tx':'#fef9ee','--mu':'#b5a895','--pn':'#130f0a','--pn2':'#1f170e','--cd':'#1c150d','--bd':'#362817','--tag-bg':'#30200d','--tag-tx':'#fde68a','--btn-g':'#291e12','--btn-gt':'#fef3c7','--tl-bd':'#3d2c17','--term-bg':'#0a0805','--term-tx':'#fde68a'},
+      light:{'--tx':'#1c150b','--mu':'#63533e','--pn':'#fdfaf4','--pn2':'#f6efe0','--cd':'#ffffff','--bd':'#e6dac3','--tag-bg':'#fef3c7','--tag-tx':'#92400e','--ac2':'#b45309','--btn-g':'#ede3d0','--btn-gt':'#291d0e','--tl-bd':'#dccbAE','--term-bg':'#17120a','--term-tx':'#fde68a'}
+    }
+  };
+
+  const FIELDS_DARK=[
+    ['--ac','Primary Accent (Buttons/LED)'],
+    ['--ac2','Secondary Accent (Role/Links)'],
+    ['--pn','Monitor Screen Background'],
+    ['--pn2','Monitor Screen Highlight'],
+    ['--cd','Card Background'],
+    ['--bd','Card Border'],
+    ['--tx','Primary Text'],
+    ['--mu','Muted / Secondary Text'],
+    ['--tag-bg','Tag Pill Background'],
+    ['--tag-tx','Tag Pill Text'],
+    ['--bg','Room Night Background'],
+    ['--bg-top','Room Wall Ambient Top']
+  ];
+  const FIELDS_LIGHT=[
+    ['--ac2','Accent Text / Links (Light)'],
+    ['--pn','Monitor Screen Bg (Light)'],
+    ['--pn2','Monitor Screen Highlight (Light)'],
+    ['--cd','Card Background (Light)'],
+    ['--bd','Card Border (Light)'],
+    ['--tx','Primary Text (Light)'],
+    ['--mu','Muted Text (Light)'],
+    ['--tag-bg','Tag Pill Bg (Light)'],
+    ['--tag-tx','Tag Pill Text (Light)']
+  ];
+
+  function lum(hex){
+    const m=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex||'');
+    if(!m)return 0;
+    const [r,g,b]=[parseInt(m[1],16)/255,parseInt(m[2],16)/255,parseInt(m[3],16)/255].map(c=>c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4));
+    return .2126*r+.7152*g+.0722*b;
+  }
+  function ratio(h1,h2){
+    const l1=lum(h1),l2=lum(h2);
+    return ((Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05)).toFixed(1);
+  }
+
+  let editTab='dark';
+  const st=document.createElement('aside');
+  st.id='secret-studio';
+  st.style.cssText='position:fixed;top:14px;left:14px;width:330px;max-height:calc(100vh - 28px);background:rgba(16,12,14,.95);border:1px solid var(--bd);border-radius:14px;padding:14px;color:#f6eff0;font:12px/1.4 Inter,sans-serif;z-index:999;box-shadow:0 20px 50px rgba(0,0,0,.75);backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:10px;overflow:hidden';
+  st.innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #312025;padding-bottom:8px">
+      <div><strong style="font:600 13px 'Space Grotesk',sans-serif;color:#fff">🎨 Studio Template & Warna</strong><div style="font-size:10px;color:#b8a3a7">Mode Rahasia · Live Customizer</div></div>
+      <button id="st-min" style="background:#261a1e;color:#fff;border:1px solid #3a2229;border-radius:6px;padding:3px 8px;cursor:pointer;font-size:11px">_</button>
+    </div>
+    <div id="st-body" style="display:flex;flex-direction:column;gap:10px;overflow:auto;padding-right:4px">
+      <div>
+        <label style="font-size:10px;color:#b8a3a7;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:4px">Preset Template</label>
+        <select id="st-preset" style="width:100%;background:#1a1215;color:#fff;border:1px solid #3a2229;border-radius:7px;padding:6px 8px;font:inherit">
+          <option value="">— Pilih Preset Warna —</option>
+          ${Object.entries(PRESETS).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('')}
+        </select>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <button id="st-tab-dark" style="padding:6px;border-radius:7px;border:1px solid var(--ac);background:var(--ac);color:#fff;font:600 11px Inter;cursor:pointer">🌙 Edit Mode Gelap</button>
+        <button id="st-tab-light" style="padding:6px;border-radius:7px;border:1px solid #3a2229;background:#1a1215;color:#b8a3a7;font:600 11px Inter;cursor:pointer">☀️ Edit Mode Terang</button>
+      </div>
+      <div id="st-wcag" style="background:#140e10;border:1px solid #2e1d22;border-radius:8px;padding:7px 9px;font:10.5px 'JetBrains Mono',monospace;color:#fda4af"></div>
+      <div id="st-fields" style="display:grid;gap:6px;max-height:38vh;overflow:auto;padding-right:4px"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;border-top:1px solid #312025;padding-top:8px">
+        <button id="st-save" style="padding:7px;border-radius:7px;border:0;background:var(--ac);color:#fff;font:600 11.5px Inter;cursor:pointer">💾 Simpan di Browser</button>
+        <button id="st-reset" style="padding:7px;border-radius:7px;border:1px solid #3a2229;background:#261a1e;color:#f3dce0;font:500 11.5px Inter;cursor:pointer">↺ Reset Default</button>
+      </div>
+      <button id="st-export" style="padding:8px;border-radius:7px;border:1px solid var(--ac2);background:#1a1215;color:var(--ac2);font:600 11.5px Inter;cursor:pointer;width:100%">⬇ Unduh index.html Permanen</button>
+      <div id="st-msg" style="font-size:10.5px;color:#34d399;text-align:center;min-height:14px"></div>
+    </div>
+  `;
+  document.body.append(st);
+
+  const fieldsEl=st.querySelector('#st-fields'),wcagEl=st.querySelector('#st-wcag'),msgEl=st.querySelector('#st-msg');
+  function updateWcag(){
+    const m=editTab==='dark'?THEME.dark:THEME.light;
+    const rTx=ratio(m['--tx'],m['--pn']);
+    const rMu=ratio(m['--mu'],m['--pn']);
+    const rAc=ratio(m['--ac2'],m['--pn']);
+    wcagEl.innerHTML=`<div>Kontras Teks Utama: <b>${rTx}:1</b> (${rTx>=7?'AAA ✅':rTx>=4.5?'AA ✅':'Rendah ⚠️'})</div><div>Kontras Teks Muted: <b>${rMu}:1</b> (${rMu>=4.5?'AA+ ✅':'Rendah ⚠️'})</div><div>Kontras Aksen: <b>${rAc}:1</b> (${rAc>=4.5?'AA+ ✅':' Cukup'})</div>`;
+  }
+  function renderFields(){
+    const list=editTab==='dark'?FIELDS_DARK:FIELDS_LIGHT;
+    const bag=editTab==='dark'?THEME.dark:THEME.light;
+    fieldsEl.innerHTML=list.map(([k,label])=>`
+      <label style="display:flex;justify-content:space-between;align-items:center;background:#161012;border:1px solid #2b1d21;border-radius:7px;padding:4px 8px">
+        <span style="font-size:11px;color:#e5d4d8">${label}</span>
+        <span style="display:flex;align-items:center;gap:5px">
+          <code style="font-size:10px;color:#b8a3a7">${bag[k]}</code>
+          <input type="color" data-k="${k}" value="${bag[k]}" style="width:24px;height:22px;border:0;background:none;cursor:pointer;padding:0">
+        </span>
+      </label>
+    `).join('');
+    fieldsEl.querySelectorAll('input[type=color]').forEach(inp=>{
+      inp.oninput=e=>{
+        const k=inp.dataset.k;
+        bag[k]=inp.value;
+        inp.previousElementSibling.textContent=inp.value;
+        applyTheme(THEME,true);
+        updateWcag();
+      };
+    });
+    updateWcag();
+  }
+  renderFields();
+
+  const tabD=st.querySelector('#st-tab-dark'),tabL=st.querySelector('#st-tab-light');
+  tabD.onclick=()=>{
+    editTab='dark';lightMode=false;document.body.classList.remove('screen-light');
+    tabD.style.background='var(--ac)';tabD.style.color='#fff';
+    tabL.style.background='#1a1215';tabL.style.color='#b8a3a7';
+    renderFields();renderAll();
+  };
+  tabL.onclick=()=>{
+    editTab='light';lightMode=true;document.body.classList.add('screen-light');
+    tabL.style.background='var(--ac)';tabL.style.color='#fff';
+    tabD.style.background='#1a1215';tabD.style.color='#b8a3a7';
+    renderFields();renderAll();
+  };
+  st.querySelector('#st-preset').onchange=e=>{
+    const p=PRESETS[e.target.value];
+    if(!p)return;
+    THEME=JSON.parse(JSON.stringify({dark:p.dark,light:p.light}));
+    applyTheme(THEME,true);
+    renderFields();
+    msgEl.textContent='Preset diterapkan!';
+  };
+  st.querySelector('#st-save').onclick=()=>{
+    try{
+      localStorage.setItem('im_portfolio_theme_v1',JSON.stringify(THEME));
+      msgEl.textContent='✓ Tersimpan di browser ini!';
+      setTimeout(()=>msgEl.textContent='',3000);
+    }catch(e){}
+  };
+  st.querySelector('#st-reset').onclick=()=>{
+    THEME=JSON.parse(JSON.stringify(DEFAULT_THEME));
+    try{localStorage.removeItem('im_portfolio_theme_v1')}catch(e){}
+    applyTheme(THEME,true);
+    renderFields();
+    msgEl.textContent='↺ Direset ke warna default!';
+    setTimeout(()=>msgEl.textContent='',3000);
+  };
+  st.querySelector('#st-export').onclick=()=>{
+    const cl=document.documentElement.cloneNode(true);
+    const ss=cl.querySelector('#secret-studio');if(ss)ss.remove();
+    const wEl=cl.querySelector('#world');if(wEl)wEl.innerHTML='';
+    const aEl=cl.querySelector('#arms');if(aEl)aEl.innerHTML='';
+    const bEl=cl.querySelector('body');if(bEl)bEl.className='';
+    let raw='<!DOCTYPE html>\n'+cl.outerHTML;
+    raw=raw.replace('<script>window.__STUDIO_MODE=1;window.__ASSET_PREFIX="../";<\/script>','').replace('href="../images/logo.png"','href="images/logo.png"');
+    const newCss=buildThemeCss(THEME);
+    let out=raw.replace(/<style id="theme-style">[\s\S]*?<\/style>/,`<style id="theme-style">\n${newCss}\n</style>`);
+    out=out.replace(/const DEFAULT_THEME=\{[\s\S]*?\};/,`const DEFAULT_THEME=${JSON.stringify(THEME)};`);
+    const blob=new Blob([out],{type:'text/html;charset=utf-8'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='index.html';
+    a.click();
+    msgEl.textContent='⬇ File index.html baru berhasil diunduh!';
+  };
+  let min=false;
+  st.querySelector('#st-min').onclick=e=>{
+    min=!min;
+    st.querySelector('#st-body').style.display=min?'none':'flex';
+    e.target.textContent=min?'+':'_';
+  };
+}
+</script></body></html>
